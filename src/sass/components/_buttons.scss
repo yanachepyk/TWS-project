@@ -1,0 +1,25 @@
+@import '../utils/variables';
+
+.button-primary {
+    display: block;
+    padding: 12px 24px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--text-primary-inverse-color);
+    background-color: var(--background-accent-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: var(--background-hover-color);
+      color: var(--text-accent-color);
+    }
+  }
+
+ 
