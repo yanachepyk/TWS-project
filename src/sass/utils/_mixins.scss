@@ -6,8 +6,8 @@
     }
  }
  
- @mixin desctop {
-    @media screen and (min-width: $desctop) {
+ @mixin desktop {
+    @media screen and (min-width: $desktop) {
        @content;
     }
  }
