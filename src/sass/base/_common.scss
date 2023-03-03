@@ -1,9 +1,8 @@
-
 body {
-    color: #000;
-    background-color: #fff;
-    font-family: Roboto, sans-serif;
-    letter-spacing: 0.03em;
+  color: #000;
+  background-color: #fff;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
 }
 
 h1,
@@ -13,15 +12,23 @@ h4,
 h5,
 h6,
 p {
-margin: 0;
+  margin: 0;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+.title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1, 19;
+  color: #202025;
 }
