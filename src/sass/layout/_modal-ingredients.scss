@@ -6,7 +6,8 @@
   width: 100%;
   height: 100%;
   padding: 40px 25px 40px 15px;
-  background-color: #ffffff;
+  font-family: Poppins, sans-serif;
+  background-color: var(--background-primary-color);
 
   @media screen and (min-width: $tablet) {
     width: 715px;
@@ -46,12 +47,12 @@
 .modal-ingredient__title {
   margin-bottom: 20px;
   margin-left: 5px;
-  font-family: 'Roboto';
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 32px;
   line-height: 1.18;
-  color: $primary-text-color;
+  color: var(--text-primary-color);
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 28px;
@@ -62,21 +63,20 @@
 .modal-ingredient__descr {
   margin-bottom: 19px;
   margin-left: 5px;
-  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   text-transform: uppercase;
-  color: $primary-text-color;
+  color: var(--text-primary-color);
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 27px;
     margin-left: -28px;
-    margin-right: -28px;
+    margin-right: -33px;
     padding-left: 28px;
     padding-bottom: 40px;
-    border-bottom: 1px solid $accent-color;
+    border-bottom: 1px solid var(--text-accent-color);
   }
 }
 
@@ -86,12 +86,11 @@
 
 .modal-ingredient__text {
   margin-bottom: 28px;
-  font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.75;
-  color: $primary-text-color;
+  color: var(--text-secondary-color);
   text-align: justify;
   letter-spacing: 0.03;
 
@@ -101,25 +100,24 @@
 }
 
 .modal-ingredient__item {
-  font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.62;
-  color: #202025;
+  color: var(--text-primary-color);
 }
 
 .modal-ingredient__btn {
   display: block;
   padding: 12px 24px;
-  font-family: 'Roboto';
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: $dark-theme-text-color;
-  background-color: $accent-color;
+  color: var(--text-primary-inverse-color);
+  background-color: var(--text-accent-color);
   border: none;
   border-radius: 4px;
 
