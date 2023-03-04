@@ -1,0 +1,132 @@
+.modal-ingredient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding: 40px 25px 40px 15px;
+
+  @media screen and (min-width: $tablet) {
+    width: 715px;
+    height: 557px;
+    padding: 40px 28px 28px 28px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 40px 33px 20px 28px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin-left: auto;
+}
+
+.modal-ingredient__list {
+  list-style-image: url('../images/star.png');
+  margin-left: 15px;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 42px;
+  }
+}
+
+.modal-ingredient__title {
+  margin-bottom: 20px;
+  margin-left: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.18;
+  color: $primary-text-color;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 28px;
+    margin-left: 0;
+  }
+}
+
+.modal-ingredient__descr {
+  margin-bottom: 19px;
+  margin-left: 5px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: $primary-text-color;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 27px;
+    margin-left: -28px;
+    margin-right: -28px;
+    padding-left: 28px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $accent-color;
+  }
+}
+
+.modal-ingredient__name {
+  font-weight: 600;
+}
+
+.modal-ingredient__text {
+  margin-bottom: 28px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  color: $primary-text-color;
+  text-align: justify;
+  letter-spacing: 0.03;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 34px;
+  }
+}
+
+.modal-ingredient__item {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.62;
+  color: #202025;
+}
+
+.modal-ingredient__btn {
+  display: block;
+  padding: 12px 24px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: $dark-theme-text-color;
+  background-color: $accent-color;
+  border: none;
+  border-radius: 4px;
+
+  @media screen and (min-width: $tablet) {
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 127px;
+  }
+}
