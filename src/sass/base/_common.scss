@@ -1,6 +1,7 @@
+@import '../utils/variables';
 body {
-  color: #000;
-  background-color: #fff;
+  color: var(--text-primary-color);
+  background-color: var(--background-primary-color);
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
 }
@@ -31,4 +32,8 @@ a {
   font-size: 32px;
   line-height: 1, 19;
   color: #202025;
+}
+
+.hidden {
+  display: none;
 }
