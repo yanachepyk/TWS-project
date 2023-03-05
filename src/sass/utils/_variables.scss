@@ -1,10 +1,45 @@
- $primary-text-color: #202025;
- $secondary-text-color:#5F6775;
- $dark-theme-text-color: #FCFCFC;
- $accent-color: #FD5103;
- $dark-theme-accent-color: #FD5103;
-
 //  container sizes
 $mobile: 320px;
 $tablet: 768px;
 $desktop: 1280px;
+
+:root,
+[data-theme="light"] {
+    color-scheme: light;
+    // для тексту і рамок
+    --text-accent-color: #FD5103; 
+
+    // для заливки
+    --background-accent-color:  #FE7031;
+
+    // для фону
+    --background-primary-color: #FCFCFC;
+    
+    // для кнопок при ховері
+    --background-hover-color: #F5F5F5;
+
+    // для заголовків 
+    --text-primary-color: #202025;
+
+    // для тексту кнопок 
+    --text-primary-inverse-color: #ffffff;
+
+    // для тексту
+    --text-secondary-color:#5F6775;
+
+    // для тексту в модалці і алфавіту
+    --text-tertiary-color:#5F6775;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --background-primary-color: #202025;
+    --background-hover-color: #373740;
+    --text-primary-color: #FCFCFC;
+    --text-primary-inverse-color: #FCFCFC;
+    --text-secondary-color:#FCFCFC;
+    --text-tertiary-color:#BDBDBD;
+}
+
+
+
