@@ -1,0 +1,241 @@
+//// для секції, щоб потім прибрати
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1280px) {
+  .section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+.hero__box {
+  margin-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  .hero__box {
+    margin-right: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__box {
+    margin-top: 0px;
+    margin-right: 66px;
+  }
+}
+.hero-container {
+  width: max-content;
+  display: block;
+  //   flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .hero-container {
+    display: flex;
+  }
+}
+.hero__title {
+  width: 300px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 42px;
+  color: var(--text-accent-color);
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    width: 336px;
+    font-size: 26px;
+    line-height: 42px;
+    margin-bottom: 40px;
+  }
+}
+.hero__text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+  margin-bottom: 20px;
+  text-align: center;
+
+  color: var(--text-primary-color);
+}
+@media screen and (min-width: 768px){
+  .hero__text{
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    width: 684px;
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 80px;
+
+    margin-top: 64px;
+    margin-bottom: 36px;
+  }
+
+  .hero__text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+
+    margin-bottom: 47px;
+  }
+}
+.tablet-text {
+  text-align: left;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .tablet-text {
+    display: block;
+  }
+}
+
+.hero__picture-cocktail {
+  width: 100%;
+  margin-bottom: 28px;
+}
+@media screen and (min-width: 400px) {
+  .hero__picture-cocktail {
+    width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__picture-cocktail {
+    width: 510px;
+  }
+}
+.hero__items {
+  display: flex;
+  justify-content: center;
+}
+.form-mobile {
+  display: block;
+}
+
+.form {
+  position: relative;
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    // position: relative;
+    display: block;
+  }
+}
+.check-box {
+  color: var(--text-accent-color);
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 93px;
+  height: 34px;
+  background-color: transparent;
+  border: 1px solid var(--text-accent-color);
+  border-radius: 4px;
+  &:focus,
+  &:hover {
+    background-color: var(--text-accent-color);
+    color: var(--text-primary-inverse-color);
+  }
+}
+@media screen and (min-width: 768px) {
+  .to-choose-tablet {
+    width: 324px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .to-choose-tablet {
+    width: 523px;
+    gap:0px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .to-choose-tablet {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .letter-tablet {
+    width: 24px;
+    height: 25px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: var(--text-secondary-color);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .letter-tablet {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+.to-choose {
+  //   display: flex;
+  width: 93px;
+  height: 84px;
+  background-color: transparent;
+  position: absolute;
+  top: 35px;
+  list-style: none;
+  overflow: scroll;
+  border: 1px solid var(--text-accent-color);
+  border-radius: 4px;
+}
+
+.letter {
+  padding: 0px 10px;
+  font-size: 10px;
+  line-height: 15px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+
+  color: var(--text-secondary-color);
+}
+.letter:hover {
+  color: white;
+  background-color: var(---text-accent-color);
+}
+.check-box-svg{
+  fill:var(--text-accent-color);
+  &:hover,
+  &:focus{
+    fill: var(--text-primary-inverse-color);
+  }
+}
+.js-letter{
+  all: unset;
+}
+// .to-choose {
+//   display: none;
+// }
+// active::to-choose {
+//   display: block;
+// }
