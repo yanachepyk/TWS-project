@@ -63,8 +63,8 @@
 
   color: var(--text-primary-color);
 }
-@media screen and (min-width: 768px){
-  .hero__text{
+@media screen and (min-width: 768px) {
+  .hero__text {
     margin-bottom: 40px;
   }
 }
@@ -162,7 +162,7 @@
 @media screen and (min-width: 1280px) {
   .to-choose-tablet {
     width: 523px;
-    gap:0px;
+    gap: 0px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -195,18 +195,6 @@
     display: none;
   }
 }
-.to-choose {
-  //   display: flex;
-  width: 93px;
-  height: 84px;
-  background-color: transparent;
-  position: absolute;
-  top: 35px;
-  list-style: none;
-  overflow: scroll;
-  border: 1px solid var(--text-accent-color);
-  border-radius: 4px;
-}
 
 .letter {
   padding: 0px 10px;
@@ -223,19 +211,60 @@
   color: white;
   background-color: var(---text-accent-color);
 }
-.check-box-svg{
-  fill:var(--text-accent-color);
+.check-box-svg {
+  fill: var(--text-accent-color);
   &:hover,
-  &:focus{
+  &:focus {
     fill: var(--text-primary-inverse-color);
   }
 }
-.js-letter{
+
+.js-letter {
   all: unset;
 }
-// .to-choose {
-//   display: none;
-// }
-// active::to-choose {
-//   display: block;
-// }
+
+.check-box-svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+.check-box--open .check-box-svg {
+  transform: rotate(180deg);
+}
+
+.to-choose {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  padding: 8px 16px;
+  border: 1px solid var(--text-accent-color);
+  border-radius: 4px;
+  max-height: 84px;
+  width: 93px;
+  overflow-y: auto;
+
+  &--visible {
+    display: block;
+  }
+}
+
+.js-letter {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--text-secondary-color);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: transparent;
+    color: var(--text-secondary-color);
+  }
+}
