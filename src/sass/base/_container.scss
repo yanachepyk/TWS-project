@@ -1,6 +1,7 @@
 @import '../utils/variables';
 
 .container {
+    box-sizing: content-box;
     width: $mobile;
     max-width: 100%;
     padding-left: 20px;
