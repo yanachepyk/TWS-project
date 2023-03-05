@@ -37,7 +37,7 @@
     }
 }
 
-// ------------------------Menu-nav------------//
+// ------------------------Menu-navbar------------//
 
 .menu__navbar {
     display: flex;
@@ -72,12 +72,64 @@
         color: var(--text-primary-color);
     }
 }
+// ------------------------Menu-navbar------------//
 
-// ------------------------Menu-search-form------------//
+
+// ------------------------Menu-navbar-sub--------//
+
+.menu__navbar-sub-list {
+    @include desktop {
+
+    border: 1px solid var(--text-accent-color);
+    border-radius: 4px;
+    position: absolute;
+    top:100%;
+    left: 0;
+    min-width: 210px;
+    display: none;
+  }
+}
+.menu__navbar-sub-list > li {
+    position: relative;
+    &:hover {
+        background-color: var(--text-accent-color);
+        
+    }
+}
+
+.menu__navbar-sub-list > li .menu__navbar-sub-link {
+    display: inline-block;
+    padding: 12px 0 12px 12px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 0.02em;
+    color: inherit;
+
+    &:hover {
+        color: var(--background-primary-color);
+    }
+}
+
+
+.menu__navbar-item {
+    &:hover .menu__navbar-sub-list  {
+            display: block;
+        }
+}
+
+
+
+// ------------------------Menu-navbar-sub--------//
+
+
+
+// ------------------------Search-form------------//
 
 
 .header__search-form {
     display: none;
+
     @include tablet {
         max-width: 320px;
         width: 100%;
@@ -135,13 +187,15 @@
     letter-spacing: 0.02em;
     color: var(--text-tertiary-color);
 }
+// ------------------------Search-form------------//
+
+
+
 
 // ------------------------Hedear-switcher------------//
 
 .header__switcher {
-
-    display: none;
-
+     display: none;
     @include desktop {
         display: flex;
         align-items: center;
@@ -152,8 +206,6 @@
         
     }
 }
-
-
 
 .checkbox {
     opacity: 0;
@@ -183,9 +235,12 @@
     left:1px;
     border-radius: 50%;
     background-color: var(--background-primary-color);
-    // transform: translate(23px);
+    // transform: translate(23px) - пересування кнопки
 
 }
+// ------------------------Hedear-switcher------------//
+
+
 
 // ------------------------Burger-menu------------//
 
