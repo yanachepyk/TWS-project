@@ -109,10 +109,10 @@ async function handleLetterClick(event) {
     refs.list.innerHTML = creatMarkup(drinks);
 }
 
-const select = document.querySelector('#select');
-select.addEventListener('change', handleLetterClick)
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', handleLetterClick)
+// const select = document.querySelector('#select');
+// select.addEventListener('change', handleLetterClick)
+// const btn = document.querySelector('.btn');
+// btn.addEventListener('click', handleLetterClick)
 
 function handleCocktailClickAction(event) {
     if (event.target.nodeName !== 'BUTTON') {
