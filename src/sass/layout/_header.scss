@@ -223,6 +223,7 @@
   position: relative;
   cursor: pointer;
 
+
   background-color: var(--background-primary-color);
   width: 40px;
   height: 20px;
@@ -234,6 +235,7 @@
   position: absolute;
   width: 16px;
   height: 16px;
+
   bottom: 1px;
   left: 1px;
   border-radius: 50%;
@@ -248,6 +250,7 @@
 .text-dark {
     color: var(--text-secondary-color);
 }
+
 
 .header__text-thema {
     font-family: 'Poppins';
@@ -264,3 +267,9 @@
     display: none;
   }
 }
+
+.btn-menu {
+  background-color: #fff;
+  border: none;
+}
+
