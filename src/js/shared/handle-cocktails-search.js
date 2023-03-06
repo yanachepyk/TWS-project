@@ -6,28 +6,38 @@ const refs = {
   title: document.querySelector('.catalog__title'),
   list: document.querySelector('.catalog__list'),
   paginator: document.querySelector('.paginator'),
-  // "Not Found" el
+  // потрібно дістати секцію "Not Found"
 };
 
 export async function handleCocktailsSearch(event) {
-  const searchQuery = event.target.value.trim();
+  event.preventDefault();
   let cocktails;
 
   if (event.target.nodeName === 'BUTTON') {
+    /**
+     * Сюди попадаємо по кліку на букви в Hero секції
+    */
+    const searchQuery = event.target?.value?.trim() || '';
+
     cocktails = await getCocktailsByFirstLetter(searchQuery);
-  } else if (event.target.nodeName === 'INPUT') {
+  } else {
+    /**
+     * Сюди попадаємо при сабміті форми пошуку із хедера
+    */
+    const searchQuery = event.target?.elements?.search?.value?.trim() || '';
+
     cocktails = await getCocktailsByName(searchQuery);
   }
 
-  if (!cocktails.drinks.length) {
+  if (!cocktails.drinks?.length) {
     refs.title.textContent = '';
     refs.list.innerHTML = '';
     refs.paginator.innerHTML = '';
-    // показувати секцію "Not Found"
+    // потрібно показувати секцію "Not Found"
     return;
   }
 
-  // ховати секцію "Not Found"
+  // потрібно ховати секцію "Not Found"
   refs.title.textContent = 'Searching results';
   refs.list.innerHTML = createCocktailsMarkup(cocktails.drinks);
   refs.paginator.innerHTML = createButtonsMarkup(cocktails.drinks.length);
