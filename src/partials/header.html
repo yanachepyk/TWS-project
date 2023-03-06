@@ -39,7 +39,7 @@
           <ul class="menu__navbar-list">
             <li><a class="menu__navbar-link" href="index.html">Home</a></li>
             <li class="menu__navbar-item">
-              <a class="menu__navbar-link" href="index.html">Favorite</a>
+              <a class="menu__navbar-link" href="index.html">Favorite </a>
               <ul class="menu__navbar-sub-list">
                 <li>
                   <a
@@ -76,21 +76,23 @@
           />
         </form>
         <div class="header__switcher">
-          <span>Ligth</span>
+          <span class="header__text-thema text-ligth">Ligth</span>
           <div class="header__switcher-wrapper">
             <input type="checkbox" class="checkbox" id="checkbox" />
             <label for="checkbox" class="checkbox-label">
               <span class="checkbox-ball" id="ball"></span>
             </label>
           </div>
-          <span>Dark</span>
+          <span class="header__text-thema text-dark">Dark</span>
         </div>
       </div>
     </div>
     <div class="menu-icon">
-      <svg style="display: block" width="30" height="16">
-        <use href="./images/icons.svg#icon-menu-burger"></use>
-      </svg>
+      <button class="btn-menu js-open-menu" type="button">
+        <svg style="display: block" width="30" height="16">
+          <use href="./images/icons.svg#icon-menu-burger"></use>
+        </svg>
+      </button>
     </div>
   </div>
 </header>
