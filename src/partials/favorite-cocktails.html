@@ -1,18 +1,34 @@
-<section class="favorite">
-  <div class="container cocktails">
-    <h1 class="main-heading">Favorite cocktails</h1>
-    <img
-      class="img-notfound is-hidden"
-      src="./images/regret/regret-desktop.png"
-    />
-    <p class="favorite__notfound-msg is-hidden">
-      You haven't added any favorite cocktails yet
-    </p>
-  
-    <ul class="cocktails__list js-cocktails" id="listing-table"></ul>
-    <ul id="tui-pagination-container" class="tui-pagination"></ul>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite cocktails</title>
 
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
 
+  <body>
+    <include src="./partials/header.html"></include>
 
+    <main>
+      <section class="favorite-cocktails">
+        <div class="container">
+          <h2 class="title-favoritecocktails">Favorite cocktails</h2>
+          <ul class="list-favorite">
+          </ul>
+          <p class="favorite__notfound-msg is-hidden">
+            You haven't added any favorite cocktails yet
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <include src="./partials/footer.html"></include>
+    <include src="./partials/mobile-menu.html"></include>
+    <include src="./partials/modal-window-cocktails.html"></include>
+    <include src="./partials/modal-window-ingredients.html"></include>
+
+    <script type="module" src="./favorites.js"></script>
+  </body>
+</html>
