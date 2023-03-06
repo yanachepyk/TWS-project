@@ -1,3 +1,5 @@
+@import '../utils/mixins';
+
 .modal-ingredient {
   position: absolute;
   top: 50%;
@@ -9,13 +11,13 @@
   font-family: Poppins, sans-serif;
   background-color: var(--background-primary-color);
 
-  @media screen and (min-width: $tablet) {
+ @include tablet {
     width: 715px;
     height: 557px;
     padding: 40px 28px 28px 28px;
   }
 
-  @media screen and (min-width: $desktop) {
+  @include desktop {
     padding: 40px 33px 20px 28px;
   }
 }
@@ -35,11 +37,11 @@
   margin-left: 15px;
   margin-bottom: 32px;
 
-  @media screen and (min-width: $tablet) {
+  @include tablet {
     margin-bottom: 40px;
   }
 
-  @media screen and (min-width: $desktop) {
+  @include desktop {
     margin-bottom: 42px;
   }
 }
@@ -54,7 +56,7 @@
   line-height: 1.18;
   color: var(--text-primary-color);
 
-  @media screen and (min-width: $tablet) {
+  @include tablet {
     margin-bottom: 28px;
     margin-left: 0;
   }
@@ -70,7 +72,7 @@
   text-transform: uppercase;
   color: var(--text-primary-color);
 
-  @media screen and (min-width: $tablet) {
+  @include tablet {
     margin-bottom: 27px;
     margin-left: -28px;
     margin-right: -33px;
@@ -94,7 +96,7 @@
   text-align: justify;
   letter-spacing: 0.03;
 
-  @media screen and (min-width: $desktop) {
+  @include desktop {
     margin-bottom: 34px;
   }
 }
@@ -121,14 +123,15 @@
   border: none;
   border-radius: 4px;
 
-  @media screen and (min-width: $tablet) {
+  @include tablet {
     margin-left: auto;
   }
 
-  @media screen and (min-width: $desktop) {
+  @include desktop {
     margin-right: 127px;
   }
 }
+
 .backdrop {
   position: absolute;
   left: 0;
