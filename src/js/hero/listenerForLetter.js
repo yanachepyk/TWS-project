@@ -8,7 +8,6 @@ heroBox.addEventListener('click', event => {
     handleCocktailsSearch({
       target: { nodeName: 'BUTTON', value: searchQuery },
     });
-    console.log('you click for letter');
   }
 });
 
