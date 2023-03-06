@@ -1,7 +1,6 @@
-import { getCocktailsByName } from './api-service';
+import { getCocktailsByName, getCocktailsByFirstLetter } from './api-service';
 import { createCocktailsMarkup } from '../catalog/create-cocktails-markup';
 import { createButtonsMarkup } from '../catalog/pagination/creat-buttons-markup';
-import { getCocktailsByFirstLetter } from './api-service';
 
 const refs = {
   title: document.querySelector('.catalog__title'),
