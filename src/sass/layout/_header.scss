@@ -189,12 +189,31 @@
     margin: 0;
     gap: 12px;
   }
+
+  &.checked {
+    .text-ligth {
+        color: var(--text-secondary-color);
+    }
+    
+    .text-dark {
+        color: var(--text-accent-color);
+    }
+    .checkbox-label {
+      background-color: var(--text-accent-color);
+      border: 1px solid var(--text-primary-inverse-color);
+
+      .checkbox-ball {
+        right: 1px;
+        left: auto;
+        background-color: var(--text-primary-inverse-color);
+      }
+    }
+  }
 }
 
 .checkbox {
-  opacity: 0;
+  display: none;
   position: absolute;
-  border: 1px solid var(--text-accent-color);
 }
 
 .checkbox-label {
@@ -204,23 +223,41 @@
   position: relative;
   cursor: pointer;
 
-  background-color: var(--text-accent-color);
+
+  background-color: var(--background-primary-color);
   width: 40px;
   height: 20px;
   border-radius: 20px;
+  border: 1px solid var(--text-accent-color);
 }
 
 .checkbox-ball {
   position: absolute;
   width: 16px;
   height: 16px;
-  right: 1px;
-  bottom: 2px;
+
+  bottom: 1px;
   left: 1px;
   border-radius: 50%;
-  background-color: var(--background-primary-color);
+  background-color: var(--text-accent-color);
   // transform: translate(23px) - пересування кнопки
 }
+
+.text-ligth {
+    color: var(--text-accent-color);
+}
+
+.text-dark {
+    color: var(--text-secondary-color);
+}
+
+
+.header__text-thema {
+    font-family: 'Poppins';
+    font-size: 18px;
+    line-height: 1.3; 
+}
+
 // ------------------------Hedear-switcher------------//
 
 // ------------------------Burger-menu------------//
@@ -235,3 +272,4 @@
   background-color: #fff;
   border: none;
 }
+
