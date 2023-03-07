@@ -70,6 +70,7 @@ export class Paginator {
     this.showPaginator();
   }
 
+
   paginate({ page }) {
     const startIndex = this.getChunkStartIndex(page);
     const chunk = this.items.slice(startIndex, startIndex + this.itemsPerPage);
