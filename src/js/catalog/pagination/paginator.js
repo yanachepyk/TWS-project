@@ -16,15 +16,23 @@ const instance = new Pagination(container, {
       '<strong class="tui-page-btn current-page paginator__btn tui-is-selected">{{page}}</strong>',
     moveButton:
       '<a href="#" class="tui-page-btn pagination-move-btn paginator__btn tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</a>',
     disabledMoveButton:
       '<span class="tui-page-btn pagination-move-btn paginator__btn tui-is-disabled tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
       '</span>',
     moreButton:
       '<a href="#" class="tui-page-btn paginator__btn tui-{{type}}-is-ellip">' +
-        '<span class="tui-ico-ellip">...</span>' +
+      '<span class="tui-ico-ellip">...</span>' +
       '</a>',
   },
+});
+
+instance.on('beforeMove', evt => {
+  console.log('befo', evt);
+});
+
+instance.on('afterMove', evt => {
+  console.log('aftter', evt);
 });
