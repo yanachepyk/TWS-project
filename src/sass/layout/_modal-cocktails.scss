@@ -28,10 +28,16 @@
     // }
 
     @media screen and(min-width: $desktop) {
-
+        padding-bottom: 28px;
         width: 822px;
     }
 };
+
+.modal-cocktails__title{
+    @media screen and(min-width: $desktop) {
+        margin-left: 320px;
+    }
+}
 
 
 .modal-cocktails__subtitle{
@@ -46,6 +52,11 @@
 
     color: #202025;
 
+    @media screen and(min-width: $desktop) {
+            margin-left: 320px;
+        }
+
+   
 }
 
 .modal-cocktails__descrip{
@@ -56,10 +67,26 @@
     line-height: 28px;
     
     color: #5F6775;
+
+    @media screen and(min-width: $desktop) {
+        margin-left: 320px;
+        }
 }
 
 .modal-cocktails__img{
+    margin-top: 32px;
+
+    background-color: teal;
     display: block;
+
+
+    @media screen and(min-width: $desktop) {
+        position: absolute;
+        display: flex;
+        top:  -32px;
+        left: 0;
+        z-index: 10;
+    }
 }
 
 .modal-cocktails__conteine{
@@ -70,22 +97,35 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
+
+    @media screen and(min-width: $desktop) {
+            margin-left: 320px;
+        }
 }
 
 .modal-cocktails__per{
     margin-top: 8px;
+
+    @media screen and(min-width: $desktop) {
+            margin-left: 320px;
+        }
 }
 
 .modal-cocktails__list{
     margin-top: 8px;
+
+    @media screen and(min-width: $desktop) {
+            margin-left: 320px;
+        }
 }
 
 .modal-cocktails__item:not(:last-child){
     margin-left: 8px;
 }
 
-.modal-cocktails__img{
-    margin-top: 32px;
+
+.modal-cocktails__item{
+    margin-bottom: 20px;
 }
 
 .modal-cocktails__link{
@@ -100,12 +140,24 @@
 
 
 .modal-cocktails__button-close{
-    display: block;
-    &:hover,
-    &:focus {
-        color: red;
-    }
+    border: none;
+    background: transparent;
+
+    position: absolute;
+    display: flex;
+    top: 23px;
+    right: 23px;
+
+    cursor: pointer;
+
+    @media screen and(min-width: $desktop) {
+            top: 19px;
+            right: 19px;
+        }
 }
-// .modal-cocktails__button{
-//     margin-top: 32px;
-// }
+
+.modal-cocktails__button{
+    @media screen and(min-width: $desktop) {
+          margin-left: auto;
+        }
+}
