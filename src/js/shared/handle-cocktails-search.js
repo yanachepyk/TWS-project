@@ -1,4 +1,4 @@
-import { getCocktailsByName } from './api-service';
+import { getCocktailsByName, getCocktailsByFirstLetter } from './api-service';
 import { createCocktailsMarkup } from '../catalog/create-cocktails-markup';
 import { createButtonsMarkup } from '../catalog/pagination/creat-buttons-markup';
 
@@ -6,7 +6,7 @@ const refs = {
   title: document.querySelector('.catalog__title'),
   list: document.querySelector('.catalog__list'),
   paginator: document.querySelector('.paginator'),
-  // потрібно дістати секцію "Not Found"
+  notFound: document.querySelector('.coctails__wrapper-found')
 };
 
 export async function handleCocktailsSearch(event) {
@@ -33,11 +33,13 @@ export async function handleCocktailsSearch(event) {
     refs.title.textContent = '';
     refs.list.innerHTML = '';
     refs.paginator.innerHTML = '';
-    // потрібно показувати секцію "Not Found"
+    refs.notFound.classList.remove("hidden");
+    refs.title.classList.add("hidden");
     return;
   }
 
-  // потрібно ховати секцію "Not Found"
+  refs.notFound.classList.add("hidden");
+  refs.title.classList.remove("hidden");
   refs.title.textContent = 'Searching results';
   refs.list.innerHTML = createCocktailsMarkup(cocktails.drinks);
   refs.paginator.innerHTML = createButtonsMarkup(cocktails.drinks.length);

@@ -26,4 +26,4 @@
     bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
-// console.log('asdasdasdasd');
+console.log('asdasdasdasd');
