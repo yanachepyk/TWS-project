@@ -2,20 +2,21 @@
 @import '../utils/variables';
 
 .header {
+
   width: 480px;
   position: relative;
   padding: 20px 20px 0px 20px;
-  margin-bottom: 60px;
+//    margin-bottom: 60px;
 
   @include tablet {
     min-width: 768px;
-    margin-bottom: 77px;
+  //    margin-bottom: 77px;
     padding: 20px 32px 0px 32px;
   }
 
   @include desktop {
     min-width: 1280px;
-    margin-bottom: 97px;
+   // margin-bottom: 97px;
     padding: 20px 32px 0px 32px;
   }
 }
@@ -69,6 +70,7 @@
     line-height: 1.33px;
     padding: 0;
     color: var(--text-primary-color);
+    font-family: 'Poppins';
   }
 }
 // ------------------------Menu-navbar------------//
@@ -101,6 +103,7 @@
   line-height: 1.33;
   letter-spacing: 0.02em;
   color: inherit;
+  font-family: 'Poppins';
 
   &:hover {
     color: var(--background-primary-color);
@@ -159,6 +162,7 @@
 .header__search-form-icon {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 .header__search-form-input {

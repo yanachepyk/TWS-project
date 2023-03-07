@@ -10,7 +10,7 @@
 }
 
 .catalog__title {
-  padding-bottom: 60px;
+  padding-bottom: 56px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
@@ -28,6 +28,7 @@
   @include desktop {
     font-size: 48px;
     line-height: 1.5;
+    padding-bottom: 60px;
   }
 }
 

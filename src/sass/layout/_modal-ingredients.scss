@@ -1,4 +1,29 @@
 @import '../utils/mixins';
+// .modal-cocktails {
+//     position: absolute;
+//     width: 90%;
+
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%) scale(1);
+//     transition: transform 250ms cubic-bezier(.17, .67, .83, .67);
+
+//     background-color: #FFFFFF;
+   
+//     @media screen and(min-width: $tablet) {
+
+//         width: 450px;
+//     }
+
+//     @media screen and(min-width: $desktop) {
+
+//         width: 822px;
+//     }
+// }
+
+// .modal-cocktails__title{
+// color: red;
+// };
 
 .modal-ingredient {
   position: absolute;
