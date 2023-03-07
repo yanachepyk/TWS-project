@@ -1,5 +1,7 @@
 import { getCocktailsDetailsById } from './api-service';
 
+
+
 export function handleLearnMoreBtnClick(selectedCocktail) {
   const modalWindow = document.querySelector('[data-modal-cocktails]');
   const backdrop = document.querySelector('.backdrop-cocktails');
@@ -7,6 +9,7 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
   getCocktailsDetailsById(selectedCocktail).then(({ drinks }) => {
     const ingredientsMeasure = [];
     const ingredients = [];
+
     const listMarkup = [];
 
     for (let ingr in drinks[0]) {
