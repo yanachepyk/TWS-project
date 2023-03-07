@@ -1,28 +1,13 @@
-function getDeviceType() {
-    const userAgent = navigator.userAgent;
-  
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(userAgent)) {
-      return 'tablet';
-    } else if (
-      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-        userAgent
-      )
-    ) {
-      return 'mobile';
-    }
-  
-    return 'desktop';
+export function getCocktailsAmountPerPage() {
+  const mobile = window.matchMedia('(max-width: 767px)');
+  const tablet = window.matchMedia('(min-width: 768px), (max-width: 1280px)');
+  let step = null;
+  if (mobile.matches) {
+    step = 3;
+  } else if (tablet.matches) {
+    step = 6;
+  } else {
+    step = 9;
   }
-
-  export function getCocktailsAmountPerPage() {
-    const userDevice = getDeviceType();
-  
-    switch (userDevice) {
-      case 'mobile':
-        return 3;
-      case 'tablet':
-        return 6;
-      case 'desktop':
-        return 9;
-    }
-  }
+  return step;
+}
