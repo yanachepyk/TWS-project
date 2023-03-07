@@ -277,3 +277,7 @@
   border: none;
 }
 
+.nav-link-active[aria-current="page"] {
+  text-decoration: underline var(--text-accent-color) 0.15rem;
+  text-underline-offset: 0.5rem;
+}
