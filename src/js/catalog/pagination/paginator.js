@@ -1,40 +1,6 @@
 import Pagination from 'tui-pagination';
 import { getCocktailsAmountPerPage } from '../../shared/get-cocktails-amount-per-page';
 
-// const container = document.querySelector('.paginator');
-// const instance = new Pagination(container, {
-//   totalItems: 9,
-//   itemsPerPage: 1,
-//   visiblePages: 5,
-//   page: 1,
-//   template: {
-//     page: '<a href="#" class="tui-page-btn paginator__btn">{{page}}</a>',
-//     currentPage: '<strong class="tui-page-btn current-page paginator__btn tui-is-selected">{{page}}</strong>',
-//     moveButton:
-//       `<a href="#" class="tui-page-btn pagination-move-btn paginator__btn tui-{{type}}">
-//         <span class="tui-ico-{{type}}">{{type}}</span>
-//       </a>`,
-//     disabledMoveButton:
-//       `<span class="tui-page-btn pagination-move-btn paginator__btn tui-is-disabled tui-{{type}}">
-//         <span class="tui-ico-{{type}}">{{type}}</span>
-//       </span>`,
-//     moreButton:
-//       `<a href="#" class="tui-page-btn paginator__btn tui-{{type}}-is-ellip">
-//         <span class="tui-ico-ellip">...</span>
-//       </a>`,
-//   },
-// });
-
-// instance.on('beforeMove', evt => {
-//   console.log('befo', evt);
-// });
-
-// instance.on('afterMove', evt => {
-//   console.log('aftter', evt);
-//   console.log('this', this);
-// });
-
-
 export class Paginator {
   constructor({
     selector,
@@ -80,6 +46,8 @@ export class Paginator {
       template: this.paginatorButtonsTemplate,
     });
 
+    this.hidePaginator();
+
     this.paginator.on('afterMove', this.paginate.bind(this));
   }
 
@@ -89,10 +57,17 @@ export class Paginator {
       return;
     }
 
+    if (items.length <= this.itemsPerPage) {
+      this.drawMarkup(items);
+      this.hidePaginator();
+      return;
+    }
+
     this.items = items;
     this.totalItems = items.length;
     this.paginator.reset(this.totalItems);
     this.paginator.movePageTo(1);
+    this.showPaginator();
   }
 
   paginate({ page }) {
