@@ -2,20 +2,21 @@
 @import '../utils/variables';
 
 .header {
+
   width: 480px;
   position: relative;
   padding: 20px 20px 0px 20px;
-  margin-bottom: 60px;
+//    margin-bottom: 60px;
 
   @include tablet {
     min-width: 768px;
-    margin-bottom: 77px;
+  //    margin-bottom: 77px;
     padding: 20px 32px 0px 32px;
   }
 
   @include desktop {
     min-width: 1280px;
-    margin-bottom: 97px;
+   // margin-bottom: 97px;
     padding: 20px 32px 0px 32px;
   }
 }
