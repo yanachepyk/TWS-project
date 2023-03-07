@@ -17,7 +17,7 @@
   @include desktop {
     min-width: 1280px;
    // margin-bottom: 97px;
-    padding: 20px 32px 0px 32px;
+    padding: 20px 32px 0px 0px;
   }
 }
 
@@ -124,16 +124,19 @@
   display: none;
 
   @include tablet {
-    max-width: 320px;
-    width: 100%;
+    min-width: 320px;
+    
     display: flex;
     border: 2px solid var(--text-accent-color);
     border-radius: 4px;
     height: 40px;
-    // margin: 0 0 40px 0;
+    margin: 0 0 0 100px;
   }
   @include desktop {
     margin: 0;
+    max-width: 320px;
+    min-width: auto;
+    width: 100%;
   }
 }
 .header__search-form-bttn {
@@ -273,7 +276,8 @@
 }
 
 .btn-menu {
-  background-color: #fff;
   border: none;
+  fill: var(--text-primary-color);
+  background-color: var(--background-primary-color);
 }
 
