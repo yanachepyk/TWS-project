@@ -11,6 +11,7 @@ export function handleLearnMoreBtnClick(e) {
     getCocktailsDetailsById(selectedCocktail).then(({ drinks }) => {
       const ingredientsMeasure = [];
       const ingredients = [];
+      const listMarkup = [];
       for (let ingr in drinks[0]) {
         if (ingr.includes('strIngredient') && ingr !== null)
           ingredients.push(ingr);
@@ -19,13 +20,13 @@ export function handleLearnMoreBtnClick(e) {
         if (ingr.includes('strMeasure') && ingr !== null)
           ingredientsMeasure.push(measure);
       }
-      let listMarkup = '';
       for (let i = 0; i < ingredients.length; i += 1) {
-        listMarkup = `<li class="modal-cocktails__item">
+        listMarkup.push(`<li class="modal-cocktails__item">
       ✶ ${ingredientsMeasure[i]}<span class="ingredient" name='${ingredients[i]}'>${ingredients[i]}</span>
       <a class="modal-cocktails__link" href="#">Ingridient</a>
-    </li>`;
+    </li>`);
       }
+      const list = listMarkup.join(' ');
       const markup = `<h1 class="modal-cocktails__title">${drinks[0].strDrink}</h1>
       <h2 class="modal-cocktails__subtitle">INSTRACTION:</h2>
       <p class="modal-cocktails__descrip">
@@ -41,7 +42,7 @@ export function handleLearnMoreBtnClick(e) {
       <h2 class="modal-cocktails__conteine">INGREDIENTS</h2>
       <p class="modal-cocktails__per">Per cocktail</p>
       <ul class="modal-cocktails__list">
-      ${listMarkup}
+      ${list}
       </ul>`;
       modalWindow.insertAdjacentHTML('afterbegin', markup);
 
