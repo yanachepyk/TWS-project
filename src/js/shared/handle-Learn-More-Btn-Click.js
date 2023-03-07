@@ -36,4 +36,5 @@ function handleLearnMoreBtnClick(e) {
     });
   }
   modalWindow.insertAdjacentHTML('afterbegin', markup);
+  modalWindow.classList.remove(‘hidden’);
 }
