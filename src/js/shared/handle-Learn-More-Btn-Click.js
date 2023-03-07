@@ -1,4 +1,6 @@
-function handleLearnMoreBtnClick(e) {
+import { getCocktailsDetailsById } from './api-service';
+
+export function handleLearnMoreBtnClick(e) {
   e.preventDefault();
   if (e.target.nodeName !== 'BUTTON') return;
   else {
@@ -23,7 +25,7 @@ function handleLearnMoreBtnClick(e) {
       </p>
       <img
         class="modal-cocktails__img"
-        src="${strDrinkThumb}"
+        src="${drinks[0].strDrinkThumb}"
         alt="modal-cocktails"
         width="280px"
         height="280px"
@@ -31,10 +33,10 @@ function handleLearnMoreBtnClick(e) {
       <h2 class="modal-cocktails__conteine">INGREDIENTS</h2>
       <p class="modal-cocktails__per">Per cocktail</p>
       <ul class="modal-cocktails__list">
-      ${listOfIngredients}
+      ${drinks[0].listOfIngredients}
       </ul>`;
+      modalWindow.innerHTML = markup;
+      modalWindow.classList.remove('hidden');
     });
   }
-  modalWindow.insertAdjacentHTML('afterbegin', markup);
-  modalWindow.classList.remove(‘hidden’);
 }
