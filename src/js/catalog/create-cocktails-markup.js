@@ -1,4 +1,5 @@
 export function createCocktailsMarkup(cocktails) {
+    const icon = document.querySelector('.catalog__icon')
     return cocktails
       .map(
         cocktail =>
@@ -12,10 +13,7 @@ export function createCocktailsMarkup(cocktails) {
                   Learn more
               </button>
               <button class="button-secondary" type="button" data-action="favorite" data-id="${cocktail.idDrink}">
-                  Add to
-                  <svg class="favorite-icon" width="21" height="19">
-                      <use href="./images/icons.svg#icon-like"></use>
-                  </svg>
+                  Add to ${icon.outerHTML}
               </button>
           </div>
       </li>`

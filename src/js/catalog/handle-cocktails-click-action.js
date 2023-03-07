@@ -1,4 +1,3 @@
-
 export function handleCocktailClickAction(event) {
     if (event.target.nodeName !== 'BUTTON') {
         return;
