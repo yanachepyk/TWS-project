@@ -2,7 +2,7 @@
   "name": "TWS-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/yanachepyk/TWS-project",
+  "homepage": "https://yanachepyk.github.io/TWS-projec",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /TWS-project/"
@@ -18,7 +18,8 @@
     "url": "https://github.com/yanachepyk/TWS-project/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "tui-pagination": "^3.4.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

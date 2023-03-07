@@ -3,27 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Page favorite ingredients</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <link
-      rel="shortcut icon"
-      href="./images/orange-juice-cocktail.png"
-      type="image/x-icon"
-    />
-  </head>
   </head>
   <body>
     <include src="./partials/header.html"></include>
-    <include src="./partials/hero.html"></include>
-    <include src="./partials/catalog.html"></include>
+    <main>
+      <section class="favorite__ingredients">
+        <div class="favorite__container container">
+          <h2 class="favorite__title">Favorite ingredients</h2>
+            <p class="favorite__text">You haven't added any favorite ingredients yet</p>
+          <ul class="favorite__list"></ul>
+        </div>
+      </section>
+    </main>
     <include src="./partials/footer.html"></include>
     <include src="./partials/modai-ingredients.html"></include>
-    <include src="./partials/modal-cocktails.html"></include>
-    <include src="./partials/backdrop.html"></include>
     <include src="./partials/header-modal.html"></include>
     <script type="module" src="./index.js"></script>
   </body>
