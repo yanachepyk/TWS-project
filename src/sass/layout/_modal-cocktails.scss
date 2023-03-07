@@ -1,3 +1,4 @@
+@import '../utils/variables';
 
 .modal-cocktails {
     position: absolute;
@@ -17,12 +18,12 @@
     background-color: #FFFFFF;
 
 
-    @media screen and(min-width: $mobile) {
+    @media screen and (min-width: $mobile) {
     
         width: 320px;
     }
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
         padding-bottom: 28px;
         width: 822px;
     }
@@ -33,7 +34,7 @@
 }
 
 .modal-cocktails__title{
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
         margin-left: 320px;
     }
 }
@@ -51,7 +52,7 @@
 
     color: #202025;
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
             margin-left: 320px;
         }
 
@@ -67,7 +68,7 @@
     
     color: #5F6775;
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
         margin-left: 320px;
         }
 }
@@ -81,7 +82,7 @@
     display: block;
 
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
         position: absolute;
         display: flex;
         top:  -32px;
@@ -99,7 +100,7 @@
     font-size: 16px;
     line-height: 24px;
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
             margin-left: 320px;
             
         }
@@ -108,7 +109,7 @@
 .modal-cocktails__per{
     margin-top: 8px;
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
             margin-left: 320px;
         }
 }
@@ -116,7 +117,7 @@
 .modal-cocktails__list{
     margin-top: 8px;
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
             margin-left: 320px;
 
             
@@ -154,14 +155,14 @@
 
     cursor: pointer;
 
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
             top: 19px;
             right: 19px;
         }
 }
 
 .modal-cocktails__button{
-    @media screen and(min-width: $desktop) {
+    @media screen and (min-width: $desktop) {
           margin-left: auto;
         }
 }
