@@ -1,4 +1,6 @@
-function handleLearnMoreBtnClick(e) {
+import { getCocktailsDetailsById } from './api-service';
+
+export function handleLearnMoreBtnClick(e) {
   e.preventDefault();
   if (e.target.nodeName !== 'BUTTON') return;
   else {
@@ -33,8 +35,8 @@ function handleLearnMoreBtnClick(e) {
       <ul class="modal-cocktails__list">
       ${listOfIngredients}
       </ul>`;
+      modalWindow.innerHTML = markup;
+      modalWindow.classList.remove('hidden');
     });
   }
-  modalWindow.insertAdjacentHTML('afterbegin', markup);
-  modalWindow.classList.remove(‘hidden’);
 }
