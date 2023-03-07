@@ -4,4 +4,3 @@ import { handleCocktailClickAction } from "../catalog/handle-cocktails-click-act
 const catalogList = document.querySelector('.catalog__list');
 
 catalogList.addEventListener('click', handleCocktailClickAction);
-
