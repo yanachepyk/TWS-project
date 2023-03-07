@@ -17,37 +17,95 @@
     background-color: #FFFFFF;
 
 
-    // @media screen and(min-width: $mobile) {
+    @media screen and(min-width: $mobile) {
     
-    //     width: 320px;
-    // }
+        width: 320px;
+    }
 
     // @media screen and(min-width: $tablet) {
 
     //     width: 90%;
     // }
 
-    // @media screen and(min-width: $desktop) {
+    @media screen and(min-width: $desktop) {
 
-    //     width: 822px;
-    // }
+        width: 822px;
+    }
 };
-// .modal-cocktails__icon{
-//     display: block;
-// }
 
-
-// .modal-cocktails__button-close{
-//     position: absolute;
-//     display: flex;
-//     top: 8px;
-//     right: 8px;
-// }
 
 .modal-cocktails__subtitle{
     margin-top: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    text-transform: uppercase;
+
+    color: #202025;
+
 }
 
 .modal-cocktails__descrip{
     margin-top: 20px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    
+    color: #5F6775;
 }
+
+.modal-cocktails__img{
+    display: block;
+}
+
+.modal-cocktails__conteine{
+    margin-top: 22px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.modal-cocktails__per{
+    margin-top: 8px;
+}
+
+.modal-cocktails__list{
+    margin-top: 8px;
+}
+
+.modal-cocktails__item:not(:last-child){
+    margin-left: 8px;
+}
+
+.modal-cocktails__img{
+    margin-top: 32px;
+}
+
+.modal-cocktails__link{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #5F6775;
+}
+
+
+.modal-cocktails__button-close{
+    display: block;
+    &:hover,
+    &:focus {
+        color: red;
+    }
+}
+// .modal-cocktails__button{
+//     margin-top: 32px;
+// }
