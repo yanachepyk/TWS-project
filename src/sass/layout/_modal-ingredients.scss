@@ -7,11 +7,12 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  z-index: 100;
   padding: 40px 25px 40px 15px;
   font-family: Poppins, sans-serif;
   background-color: var(--background-primary-color);
 
- @include tablet {
+  @include tablet {
     width: 715px;
     height: 557px;
     padding: 40px 28px 28px 28px;
@@ -130,13 +131,4 @@
   @include desktop {
     margin-right: 127px;
   }
-}
-
-.backdrop {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
 }
