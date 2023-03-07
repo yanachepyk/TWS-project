@@ -1,9 +1,8 @@
 const closeModalBtn = document.querySelector('[data-modal-close]');
-const modalCocktails = document.querySelector('[data-modal-cocktails]');
+const backdrop = document.querySelector('.backdrop-cocktails');
 
+closeModalBtn.addEventListener('click', closeModal);
 
-closeModalBtn.addEventListener('click', toggleModal);
-
-function toggleModal() {
-    modalCocktails.classList.toggle('is-hidden')
+function closeModal() {
+    backdrop.classList.add('hidden')
 }
