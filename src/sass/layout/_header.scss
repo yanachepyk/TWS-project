@@ -69,6 +69,7 @@
     line-height: 1.33px;
     padding: 0;
     color: var(--text-primary-color);
+    font-family: 'Poppins';
   }
 }
 // ------------------------Menu-navbar------------//
@@ -101,6 +102,7 @@
   line-height: 1.33;
   letter-spacing: 0.02em;
   color: inherit;
+  font-family: 'Poppins';
 
   &:hover {
     color: var(--background-primary-color);
@@ -159,6 +161,7 @@
 .header__search-form-icon {
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 .header__search-form-input {
