@@ -36,7 +36,7 @@
   gap: 32px;
   @include tablet {
     margin-top: 54px;
-    margin-left: 290px;
+    margin-left: 330px;
     align-items: flex-start;
     gap: 40px;
   }
@@ -154,8 +154,9 @@
 .header__switcher-btn {
   display: flex;
   align-items: center;
+  gap: 12px;
   padding: 8px;
-  
+
   &.checked {
       .text-ligth {
         color: var(--text-secondary-color);
