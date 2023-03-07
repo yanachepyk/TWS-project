@@ -5,9 +5,8 @@
 .wrapper-modal-header {
   z-index: 9;
 }
-.menu__modal-list {
-}
 .header__switcher-modal {
+  
   display: flex;
   padding-left: 20px;
   flex-direction: column;
@@ -15,14 +14,16 @@
   padding-right: 20px;
   padding-top: 27px;
 }
+
 .header__search-form-modal {
-  max-width: 320px;
+  // max-width: 320px;
   width: 100%;
   border: 2px solid var(--text-accent-color);
   height: 40px;
   border-radius: 4px;
   display: flex;
   margin-top: 40px;
+  margin-bottom: 40px;
   @include tablet {
     display: none;
   }
@@ -34,7 +35,10 @@
   margin-top: 40px;
   gap: 32px;
   @include tablet {
-    align-items: center;
+    margin-top: 54px;
+    margin-left: 290px;
+    align-items: flex-start;
+    gap: 40px;
   }
 }
 
@@ -48,15 +52,19 @@
 }
 
 .header__light-switcher {
+  font-family: 'Poppins';
   font-size: 14px;
   line-height: 24px;
   margin-right: 8px;
+  // color: var(--text-accent-color);
 }
 
 .header__dark-switcher {
+  font-family: 'Poppins';
   font-size: 14px;
   line-height: 24px;
   margin-left: 8px;
+  // color: var(--text-secondary-color);
 }
 .menu__navbar-sub-list-modal {
   @include desktop {
@@ -116,6 +124,8 @@
 }
 .header__svg-down {
   margin-left: 6px;
+  fill: var(--text-primary-color);
+  background-color: var(--background-primary-color);
 }
 
 .header__search-form-input-modal {
@@ -144,6 +154,28 @@
 .header__switcher-btn {
   display: flex;
   align-items: center;
+  padding: 8px;
+  
+  &.checked {
+      .text-ligth {
+        color: var(--text-secondary-color);
+      }
+  
+      .text-dark {
+        color: var(--text-accent-color);
+      }
+  
+      .checkbox-label {
+        background-color: var(--text-accent-color);
+        border: 1px solid var(--text-primary-inverse-color);
+  
+        .checkbox-ball {
+          right: 1px;
+          left: auto;
+          background-color: var(--text-primary-inverse-color);
+        }
+      }
+    }
 }
 
 .header__wrapper-modal-header {
@@ -154,7 +186,9 @@
   right: 0;
   bottom: 0;
   z-index: 10;
-  background-color: #fff;
+  color: var(--text-primary-color);
+  background-color: var(--background-primary-color);
+  
   @include desktop {
     display: none;
   }
@@ -169,7 +203,10 @@
   display: block;
 }
 .btn-menu-modal {
-  background-color: #fff;
   border: none;
   margin-left: auto;
+  fill: var(--text-primary-color);
+  background-color: var(--background-primary-color);
 }
+
+
