@@ -1,3 +1,7 @@
+
+import { getCocktailsDetailsById } from './api-service';
+
+
 export function handleLearnMoreBtnClick(e) {
   e.preventDefault();
   if (e.target.nodeName !== 'BUTTON') return;
@@ -29,7 +33,7 @@ export function handleLearnMoreBtnClick(e) {
       </p>
       <img
         class="modal-cocktails__img"
-        src="${strDrinkThumb}"
+        src="${drinks[0].strDrinkThumb}"
         alt="modal-cocktails"
         width="280px"
         height="280px"
@@ -40,6 +44,7 @@ export function handleLearnMoreBtnClick(e) {
       ${listMarkup}
       </ul>`;
       modalWindow.insertAdjacentHTML('afterbegin', markup);
+
       modalWindow.classList.remove('hidden');
     });
   }
