@@ -1,4 +1,4 @@
-const API_URL = 'http://www.thecocktaildb.com/api/json/v1/1';
+const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1';
 
 function getRandomCocktail() {
   return fetch(`${API_URL}/random.php`).then(response => response.json());
