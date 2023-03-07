@@ -1,9 +1,9 @@
 export function createCocktailsMarkup(cocktails) {
-    const icon = document.querySelector('.catalog__icon')
-    return cocktails
-      .map(
-        cocktail =>
-          `<li class="catalog__item">
+  const icon = document.querySelector('.catalog__icon');
+  return cocktails
+    .map(
+      cocktail =>
+        `<li class="catalog__item">
           <div class="catalog__wrapper-img">
               <img class="catalog__img" src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink} image" />
           </div>
@@ -17,6 +17,6 @@ export function createCocktailsMarkup(cocktails) {
               </button>
           </div>
       </li>`
-      )
-      .join('');
-  }
+    )
+    .join('');
+}
