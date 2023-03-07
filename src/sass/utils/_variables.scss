@@ -29,6 +29,9 @@ $desktop: 1280px;
 
     // для тексту в модалці і алфавіту
     --text-tertiary-color:#5F6775;
+
+    // для бордеру пагінації
+    --pagination-border-color: #EAEBEA;
 }
 
 :root[data-theme="dark"] {
@@ -39,6 +42,7 @@ $desktop: 1280px;
     --text-primary-inverse-color: #FCFCFC;
     --text-secondary-color:#FCFCFC;
     --text-tertiary-color:#BDBDBD;
+    --pagination-border-color: #4F4E4E;
 }
 
 

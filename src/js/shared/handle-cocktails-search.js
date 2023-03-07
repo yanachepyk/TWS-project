@@ -1,11 +1,10 @@
 import { getCocktailsByName, getCocktailsByFirstLetter } from './api-service';
 import { createCocktailsMarkup } from '../catalog/create-cocktails-markup';
-import { createButtonsMarkup } from '../catalog/pagination/creat-buttons-markup';
 
 const refs = {
   title: document.querySelector('.catalog__title'),
   list: document.querySelector('.catalog__list'),
-  paginator: document.querySelector('.paginator'),
+  // paginator: document.querySelector('.paginator'),
   notFound: document.querySelector('.coctails__wrapper-found')
 };
 
@@ -32,7 +31,7 @@ export async function handleCocktailsSearch(event) {
   if (!cocktails.drinks?.length) {
     refs.title.textContent = '';
     refs.list.innerHTML = '';
-    refs.paginator.innerHTML = '';
+    // refs.paginator.innerHTML = '';
     refs.notFound.classList.remove("hidden");
     refs.title.classList.add("hidden");
     return;
@@ -42,5 +41,5 @@ export async function handleCocktailsSearch(event) {
   refs.title.classList.remove("hidden");
   refs.title.textContent = 'Searching results';
   refs.list.innerHTML = createCocktailsMarkup(cocktails.drinks);
-  refs.paginator.innerHTML = createButtonsMarkup(cocktails.drinks.length);
+  // refs.paginator.innerHTML = ;
 }

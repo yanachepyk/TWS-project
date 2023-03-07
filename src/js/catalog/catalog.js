@@ -1,6 +1,7 @@
 import { getRandomCocktail} from '../shared/api-service';
 import { getCocktailsAmountPerPage } from '../shared/get-cocktails-amount-per-page';
 import { createCocktailsMarkup } from './create-cocktails-markup';
+import './pagination/paginator';
 
 function getRandomCoctails(amount) {
   return Array(amount)
