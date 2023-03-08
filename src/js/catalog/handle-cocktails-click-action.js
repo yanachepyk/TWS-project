@@ -3,13 +3,14 @@ import { addCocktailToFavorite, removeCoctailFromFavorite } from "../shared/save
 
 const icon = document.querySelector('.catalog__icon');
 
-export function handleCocktailClickAction(event) {
-    if (event.target.nodeName !== 'BUTTON') {
-        return;
-    }
 
-    const action = event.target.dataset.action;
-    const cocktailId = event.target.dataset.id;
+export function handleCocktailClickAction(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  const action = event.target.dataset.action;
+  const cocktailId = event.target.dataset.id;
 
     if (action === 'learn_more') {
         handleLearnMoreBtnClick(cocktailId);
@@ -24,3 +25,4 @@ export function handleCocktailClickAction(event) {
         event.target.innerHTML = `Add to ${icon.outerHTML}`;
     }
 }
+
