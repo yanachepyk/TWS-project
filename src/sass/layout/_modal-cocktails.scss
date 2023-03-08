@@ -3,13 +3,15 @@
 .modal-cocktails {
     position: absolute;
     width: 90%;
-    overflow-y: scroll;
+    max-height: 95%;
+    overflow-y: auto;
 
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 16px;
     padding-bottom: 40px;
 
+    border-radius: 2px;
 
     top: 50%;
     left: 50%;
@@ -18,13 +20,22 @@
 
     background-color: white;
 
+    
+
 
     @media screen and (min-width: $mobile) {
     
         width: 320px;
     }
 
-    @media screen and (min-width: $tablet) {
+    @include tablet{
+        padding-left: 28px;
+        padding-right: 28px;
+        padding-bottom: 28px;
+        width: 95%;
+    }
+
+    @include desktop{
         padding-bottom: 28px;
         width: 822px;
     }
@@ -35,9 +46,9 @@
 }
 
 .modal-cocktails__title{
-    @media screen and (min-width: $desktop) {
-        margin-left: 320px;
-    }
+    @include tablet {
+            margin-left: 320px;
+        }
 }
 
 
@@ -53,11 +64,11 @@
 
     color: #202025;
 
-    @media screen and (min-width: $desktop) {
-            margin-left: 320px;
-        }
+    @include tablet{
+        margin-top: 0;
+    }
 
-   
+
 }
 
 .modal-cocktails__descrip{
@@ -68,10 +79,6 @@
     line-height: 28px;
     
     color: #5F6775;
-
-    @media screen and (min-width: $desktop) {
-        margin-left: 320px;
-        }
 }
 
 .modal-cocktails__img{
@@ -82,14 +89,20 @@
     background-color: teal;
     display: block;
 
+    @include tablet{
+        height: 320px;
 
-    @media screen and (min-width: $desktop) {
         position: absolute;
         display: flex;
-        top:  -32px;
+        top: -32px;
         left: 0;
         z-index: 2;
     }
+
+
+    // @media screen and (min-width: $desktop) {
+        
+    // }
 }
 
 .modal-cocktails__conteine{
@@ -101,49 +114,42 @@
     font-size: 16px;
     line-height: 24px;
 
-    @media screen and (min-width: $desktop) {
-            margin-left: 320px;
-            
+
+    @include tablet {
+        margin-left: 320px;
         }
+
 }
 
 .modal-cocktails__per{
     margin-top: 8px;
 
-    @media screen and (min-width: $desktop) {
-            margin-left: 320px;
-        }
+    @include tablet {
+        margin-left: 320px;
+    }
 }
 
 .modal-cocktails__list{
     margin-top: 8px;
-
-    @media screen and (min-width: $desktop) {
-            margin-left: 320px;
-
-            
-        }
-}
-
-.modal-cocktails__item:not(:last-child){
-    margin-left: 8px;
-}
-
-
-.modal-cocktails__item{
     margin-bottom: 20px;
-}
+    margin-left: -5px;
 
-.modal-cocktails__link{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-
+    
     color: #5F6775;
+
+    @include tablet {
+        margin-left: 320px;
+    }
 }
 
+.modal-cocktails__item:not(:last-child){
+    margin-bottom: 8px;
+}
 
 .modal-cocktails__button-close{
     border: none;
@@ -161,36 +167,47 @@
         fill: var(--text-accent-color);
     }
 
-    @media screen and (min-width: $desktop) {
+        @include tablet {
             top: 19px;
             right: 19px;
         }
+
 }
 
 .modal-cocktails__button{
-    @media screen and (min-width: $desktop) {
+    @include tablet {
           margin-left: auto;
         }
 }
 
-.test {
-
-    @media screen and (min-width: $tablet) {
-        display: flex;
-        flex-direction: column-reverse;
-
-    }
+.modal-cocktails__span{
+    color: #202025;
 }
 
-.test2 {
 
-    @media screen and (min-width: $tablet) {
-
-        margin-top: 117px;
-        margin-left: -320px;
+.test{
+    @include tablet{
+    display: flex;
+    flex-direction: column-reverse;
+    // background-color: teal;
     }
+
+    
 }
 
-.test3 {
-    display: block;
+.test2{
+    @include tablet {
+    margin-top: 55px;
+    margin-bottom: 40px;
+    // background-color: tomato;
+    }
+
+    
+}
+
+
+.test3{
+    @include tablet {
+   
+    }
 }
