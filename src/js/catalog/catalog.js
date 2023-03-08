@@ -10,18 +10,23 @@ function getRandomCoctails(amount) {
 }
 
 async function showInitialCoctails() {
-  const cocktailsAmount = getCocktailsAmountPerPage();
-  const cocktailsPromises = getRandomCoctails(cocktailsAmount);
-  const cocktails = await Promise.all(cocktailsPromises);
+  const refs = {
+    title: document.querySelector('.catalog__title'),
+    list: document.querySelector('.catalog__list'),
+    paginator: document.querySelector('.paginator'),
+  };
+  if (localStorage.getItem('query')) {
+    const markup = localStorage.getItem('query');
+    refs.list.insertAdjacentHTML('afterbegin', markup);
+    localStorage.removeItem('query');
+  } else {
+    const cocktailsAmount = getCocktailsAmountPerPage();
+    const cocktailsPromises = getRandomCoctails(cocktailsAmount);
+    const cocktails = await Promise.all(cocktailsPromises);
 
-  refs.list.innerHTML = createCocktailsMarkup(cocktails);
+    refs.list.innerHTML = createCocktailsMarkup(cocktails);
+  }
 }
-
-const refs = {
-  title: document.querySelector('.catalog__title'),
-  list: document.querySelector('.catalog__list'),
-  paginator: document.querySelector('.paginator'),
-};
 
 // export const catalogPaginator = new Paginator({
 //   selector: '.paginator',
