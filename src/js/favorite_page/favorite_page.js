@@ -1,16 +1,28 @@
 import { createMarkupIng } from '../shared/add-coctails-to-ingridient';
 import { getCocktailIngredientById } from '../shared/api-service';
+import { Paginator } from '../catalog/pagination/paginator';
 
 const refs = {
   ingEl: document.querySelector('.js-favorite__ing'),
-  
 };
+
+const favoriteCocktailsPaginator = new Paginator({
+  selector: '.paginator',
+  drawMarkup: ing => {
+    refs.ingEl.innerHTML = createMarkupIng(ing);
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+  }
+});
+
 async function onLoad() {
   const ingridients = JSON.parse(localStorage.getItem('favoriteIng') || '[]');
   const promises = getIngridients(ingridients);
   const res = await Promise.all(promises);
-  console.log(createMarkupIng(res));
-  refs.ingEl.insertAdjacentHTML('afterbegin', createMarkupIng(res));
+
+  favoriteCocktailsPaginator.update(res)
 }
 onLoad();
 function getIngridients(ing) {
