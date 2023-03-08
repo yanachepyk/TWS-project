@@ -20,9 +20,6 @@
 
     background-color: white;
 
-    
-
-
     @media screen and (min-width: $mobile) {
     
         width: 320px;
@@ -99,10 +96,6 @@
         z-index: 2;
     }
 
-
-    // @media screen and (min-width: $desktop) {
-        
-    // }
 }
 
 .modal-cocktails__conteine{
@@ -189,7 +182,7 @@
     @include tablet{
     display: flex;
     flex-direction: column-reverse;
-    // background-color: teal;
+
     }
 
     
@@ -199,7 +192,7 @@
     @include tablet {
     margin-top: 55px;
     margin-bottom: 40px;
-    // background-color: tomato;
+   
     }
 
     
