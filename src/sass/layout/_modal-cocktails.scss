@@ -166,3 +166,25 @@
           margin-left: auto;
         }
 }
+
+.test {
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+}
+
+.test2 {
+
+    @media screen and (min-width: $tablet) {
+
+        margin-top: 117px;
+        margin-left: -320px;
+    }
+}
+
+.test3 {
+    display: block;
+}
