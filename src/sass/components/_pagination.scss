@@ -1,18 +1,27 @@
+@import '../utils/mixins';
+
 .paginator {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 32px;
   padding-bottom: 60px;
-  gap: 20px;
+  gap: 10px;
+
+  @include tablet {
+    gap: 20px;
+  }
+
+  &.hidden {
+    display: none;
+  }
 }
 
 .paginator__btn {
-  all: unset;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  padding: 0 15px;
   height: 40px;
   font-family: 'Montserrat';
   font-style: normal;
