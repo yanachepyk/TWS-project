@@ -1,4 +1,4 @@
-import { getRandomCocktail} from '../shared/api-service';
+import { getRandomCocktail } from '../shared/api-service';
 import { getCocktailsAmountPerPage } from '../shared/get-cocktails-amount-per-page';
 import { createCocktailsMarkup } from './create-cocktails-markup';
 // import { Paginator } from './pagination/paginator';
@@ -20,7 +20,7 @@ async function showInitialCoctails() {
 const refs = {
   title: document.querySelector('.catalog__title'),
   list: document.querySelector('.catalog__list'),
-  paginator: document.querySelector('.paginator')
+  paginator: document.querySelector('.paginator'),
 };
 
 // export const catalogPaginator = new Paginator({

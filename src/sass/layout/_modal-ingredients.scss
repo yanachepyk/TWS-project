@@ -20,13 +20,13 @@
   background-color: var(--background-primary-color);
 
   @include tablet {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 715px;
     height: 557px;
-    overflow: scroll;
+    overflow-y: auto;
     padding: 40px 28px 28px 28px;
   }
 
@@ -46,6 +46,7 @@
   width: 17px;
   height: 17px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .modal-ingredient__list {
