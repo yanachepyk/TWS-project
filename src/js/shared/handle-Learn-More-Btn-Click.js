@@ -28,7 +28,7 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
         ingredients[i]
       }'>${ingredients[i]}</span>
 
-      <a class="modal-cocktails__link" href="#">Ingridient</a>
+      <a class="modal-cocktails__link" href="javascript:void(0);">Ingridient</a>
 
     </li>`);
     }
@@ -48,15 +48,11 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
       <h2 class="modal-cocktails__conteine">INGREDIENTS</h2>
       <p class="modal-cocktails__per">Per cocktail</p>
       <ul class="modal-cocktails__list">
-  ${list}
+        ${list}
       </ul>`;
 
+      modalWindow.innerHTML = markup;
+      backdrop.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
   });
-  // modalWindow.insertAdjacentHTML('afterbegin', markup);
-  // modalWindow.classList.remove('hidden');
-    modalWindow.innerHTML = markup;
-    backdrop.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  });
-
 }

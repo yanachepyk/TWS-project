@@ -22,6 +22,7 @@ function handleIngredientModalOpen(e) {
     const markupContainer = document.querySelector(
       '.modal-ingredient__wrapper'
     );
+    const addToFavoriteBtn = document.querySelector('.js-modal-ingredient');
     getCocktailIngredientByName(selectedIngredient).then(({ ingredients }) => {
       const ingredient = ingredients[0];
       const markup = `
@@ -45,8 +46,10 @@ function handleIngredientModalOpen(e) {
       <li class="modal-ingredient__item">Flavour:</li>
     </ul>`;
       markupContainer.innerHTML = markup;
+      backdrop.classList.add('hidden');
       ingredientModalWindow.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
+      addToFavoriteBtn.value = ingredient.idIngredient;
     });
   }
 }
