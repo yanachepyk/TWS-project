@@ -36,16 +36,17 @@ function handleIngredientModalOpen(e) {
     </p>
     <ul class="modal-ingredient__list">
       <li class="modal-ingredient__item">Type: ${
-        ingredient.strIngredient || 'not found'
+        ingredient.strIngredient || ' '
       }</li>
       <li class="modal-ingredient__item">Country of origin:</li>
       <li class="modal-ingredient__item">Alcohol by volume: ${
-        ingredient.strABV || 'not found'
+        ingredient.strABV || ' '
       }%</li>
       <li class="modal-ingredient__item">Flavour:</li>
     </ul>`;
       markupContainer.innerHTML = markup;
       ingredientModalWindow.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     });
   }
 }
