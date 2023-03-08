@@ -28,13 +28,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 715px;
-    height: 557px;
+    max-height: 557px;
     overflow-y: auto;
     padding: 40px 28px 28px 28px;
   }
 
   @include desktop {
-    padding: 40px 33px 20px 28px;
+    padding: 40px 33px 28px 28px;
   }
 }
 .close-btn {
@@ -50,19 +50,15 @@
   height: 17px;
   margin-left: auto;
   cursor: pointer;
+  fill: var(--text-primary-color);
 }
 
 .modal-ingredient__list {
-  list-style-image: url('../images/star.png');
   margin-left: 15px;
   margin-bottom: 32px;
 
   @include tablet {
     margin-bottom: 40px;
-  }
-
-  @include desktop {
-    margin-bottom: 42px;
   }
 }
 
@@ -104,6 +100,7 @@
 
 .modal-ingredient__name {
   font-weight: 600;
+  color: var(--text-primary-color);
 }
 
 .modal-ingredient__text {
@@ -126,6 +123,10 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.62;
+  color: var(--text-secondary-color);
+}
+
+.modal-ingrid__span {
   color: var(--text-primary-color);
 }
 
@@ -145,10 +146,6 @@
 
   @include tablet {
     margin-left: auto;
-  }
-
-  @include desktop {
-    margin-right: 127px;
   }
 }
 
