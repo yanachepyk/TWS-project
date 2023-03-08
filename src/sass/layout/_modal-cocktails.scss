@@ -18,7 +18,7 @@
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(.17, .67, .83, .67);
 
-    background-color: white;
+    background-color: var(--background-primary-color);
 
     @media screen and (min-width: $mobile) {
     
@@ -59,7 +59,7 @@
     line-height: 26px;
     text-transform: uppercase;
 
-    color: #202025;
+    color: var(--text-primary-color);
 
     @include tablet{
         margin-top: 0;
@@ -75,7 +75,7 @@
     font-size: 16px;
     line-height: 28px;
     
-    color: #5F6775;
+    color: var(--text-secondary-color);
 }
 
 .modal-cocktails__img{
@@ -107,6 +107,8 @@
     font-size: 16px;
     line-height: 24px;
 
+    color: var(--text-primary-color);
+
 
     @include tablet {
         margin-left: 320px;
@@ -116,6 +118,7 @@
 
 .modal-cocktails__per{
     margin-top: 8px;
+    color: var(--text-primary-color);
 
     @include tablet {
         margin-left: 320px;
@@ -133,7 +136,7 @@
     font-size: 16px;
     line-height: 26px;
     
-    color: #5F6775;
+    color: var(--text-secondary-color);
 
     @include tablet {
         margin-left: 320px;
@@ -190,7 +193,7 @@
 
 .test2{
     @include tablet {
-    margin-top: 55px;
+    margin-top: 100px;
     margin-bottom: 40px;
    
     }
