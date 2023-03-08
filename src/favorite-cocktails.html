@@ -16,8 +16,14 @@
       <section class="favorite__cocktails">
         <div class="favorite__container container">
           <h2 class="favorite__title">Favorite cocktails</h2>
+
+          <div class="js-favorite__cocktails">
+
+          </div>
+
             <p class="favorite__text">You haven't added any favorite cocktails yet</p>
           <ul class="favorite__list"></ul>
+          <div class="paginator"></div>
         </div>
       </section>
     </main>
@@ -25,6 +31,11 @@
     <include src="./partials/modai-ingredients.html"></include>
     <include src="./partials/modal-cocktails.html"></include>
     <include src="./partials/header-modal.html"></include>
+    <div class="hidden">
+      <svg class="catalog__icon" width="21" height="19">
+        <use href="./images/icons.svg#icon-like"></use>
+      </svg>
+    </div>
     <script type="module" src="./favorite-cocktails.js"></script>
   </body>
 </html>

@@ -1,5 +1,4 @@
 import { getCocktailsByName, getCocktailsByFirstLetter } from './api-service';
-// import { catalogPaginator } from '../catalog/catalog';
 import { Paginator } from '../catalog/pagination/paginator';
 import { createCocktailsMarkup } from '../catalog/create-cocktails-markup';
 
