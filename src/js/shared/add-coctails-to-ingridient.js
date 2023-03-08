@@ -44,7 +44,7 @@ export function createMarkupIng(ing) {
     <h3 class="ing__text-name">${e.strIngredient}</h3>
     <p class='ing__text'>${e.strType || 'No type found'}</p>
     <div class="ing__btns">
-    <button class="ing__button-primary">Learn more</button>
+    <button class="ing__button-primary js-ingredient" data-ingredient="${e.strIngredient}">Learn more</button>
     <button class='ing__button-secondary' data-id="${
       e.idIngredient
     }">Remove</button>

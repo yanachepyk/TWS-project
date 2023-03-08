@@ -1,5 +1,6 @@
 import { getCocktailsDetailsById } from './api-service';
 import { addCocktailToFavorite, removeCoctailFromFavorite } from './save-favorite-coctails';
+import {handleIngredientModalOpen} from './handle-ingredient-modal-open';
 
 export function handleLearnMoreBtnClick(selectedCocktail) {
   const modalWindow = document.querySelector('[data-modal-cocktails]');
@@ -41,7 +42,7 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
 
     for (let i = 0; i < ingredients.length; i += 1) {
       listMarkup.push(`<li class="modal-cocktails__item"><span class="modal-cocktails__span">✶</span>
-      ${ingredientsMeasure[i] || ''}<span class="ingredient" name='${ingredients[i]}'>${ingredients[i]}</span>
+      ${ingredientsMeasure[i] || ''}<span class="ingredient js-ingredient" data-ingredient="${ingredients[i]}" name='${ingredients[i]}'>${ingredients[i]}</span>
     </li>`);
     }
     const list = listMarkup.join(' ');
@@ -64,7 +65,7 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
         <div class="test3">
           <h2 class="modal-cocktails__conteine">INGREDIENTS</h2>
           <p class="modal-cocktails__per">Per cocktail</p>
-          <ul class="modal-cocktails__list">${list}</ul>
+          <ul class="modal-cocktails__list js-ingredients-list">${list}</ul>
         </div>   
     </div>`;
 
@@ -77,5 +78,8 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
         modalButtonAddFavorite.dataset.action = 'remove_favorite';
         modalButtonAddFavorite.innerHTML = `Remove from favorite`;
       }
+
+      const ingredientList = document.querySelector('.js-ingredients-list');
+      ingredientList.addEventListener('click', handleIngredientModalOpen);
   });
 }
