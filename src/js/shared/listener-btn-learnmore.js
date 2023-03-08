@@ -1,4 +1,6 @@
-import { handleLearnMoreBtnClick } from './handle-Learn-More-Btn-Click';
-
+import '../modal-ingredients/modal-ingredients';
+import { handleCocktailClickAction } from '../catalog/handle-cocktails-click-action';
+import { handleIngredientModalOpen } from './handle-ingredient-modal-open';
 const catalogList = document.querySelector('.catalog__list');
-catalogList.addEventListener('click', handleLearnMoreBtnClick);
+
+catalogList.addEventListener('click', handleCocktailClickAction);
