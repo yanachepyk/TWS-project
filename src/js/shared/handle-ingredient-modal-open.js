@@ -22,6 +22,7 @@ function handleIngredientModalOpen(e) {
     const markupContainer = document.querySelector(
       '.modal-ingredient__wrapper'
     );
+    const addToFavoriteBtn = document.querySelector('.js-modal-ingredient');
     getCocktailIngredientByName(selectedIngredient).then(({ ingredients }) => {
       const ingredient = ingredients[0];
       const markup = `
@@ -36,16 +37,19 @@ function handleIngredientModalOpen(e) {
     </p>
     <ul class="modal-ingredient__list">
       <li class="modal-ingredient__item">Type: ${
-        ingredient.strIngredient || 'not found'
+        ingredient.strIngredient || ' '
       }</li>
       <li class="modal-ingredient__item">Country of origin:</li>
       <li class="modal-ingredient__item">Alcohol by volume: ${
-        ingredient.strABV || 'not found'
+        ingredient.strABV || ' '
       }%</li>
       <li class="modal-ingredient__item">Flavour:</li>
     </ul>`;
-      markupContainer.insertAdjacentHTML('afterbegin', markup);
-      ingredientWindow.classList.remove('hidden');
+      markupContainer.innerHTML = markup;
+      backdrop.classList.add('hidden');
+      ingredientModalWindow.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      addToFavoriteBtn.value = ingredient.idIngredient;
     });
   }
 }

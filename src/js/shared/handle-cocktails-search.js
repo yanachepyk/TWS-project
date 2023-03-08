@@ -6,14 +6,18 @@ import { createCocktailsMarkup } from '../catalog/create-cocktails-markup';
 const refs = {
   title: document.querySelector('.catalog__title'),
   list: document.querySelector('.catalog__list'),
-  notFound: document.querySelector('.coctails__wrapper-found')
+  notFound: document.querySelector('.coctails__wrapper-found'),
 };
 
 const catalogPaginator = new Paginator({
   selector: '.paginator',
-  drawMarkup: (cocktails) => {
+  drawMarkup: cocktails => {
     refs.list.innerHTML = createCocktailsMarkup(cocktails);
-  }
+    window.scrollTo({
+      top: 700,
+      behavior: 'smooth',
+    });
+  },
 });
 
 export async function handleCocktailsSearch(event) {
@@ -39,14 +43,14 @@ export async function handleCocktailsSearch(event) {
   if (!cocktails.drinks?.length) {
     refs.title.textContent = '';
     refs.list.innerHTML = '';
-    refs.notFound.classList.remove("hidden");
-    refs.title.classList.add("hidden");
+    refs.notFound.classList.remove('hidden');
+    refs.title.classList.add('hidden');
     catalogPaginator.hidePaginator();
     return;
   }
 
-  refs.notFound.classList.add("hidden");
-  refs.title.classList.remove("hidden");
+  refs.notFound.classList.add('hidden');
+  refs.title.classList.remove('hidden');
   refs.title.textContent = 'Searching results';
   catalogPaginator.update(cocktails?.drinks);
 }

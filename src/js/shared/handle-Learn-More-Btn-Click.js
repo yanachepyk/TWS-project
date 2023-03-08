@@ -1,10 +1,25 @@
 import { getCocktailsDetailsById } from './api-service';
-
-
+import { addCocktailToFavorite, removeCoctailFromFavorite } from './save-favorite-coctails';
 
 export function handleLearnMoreBtnClick(selectedCocktail) {
   const modalWindow = document.querySelector('[data-modal-cocktails]');
   const backdrop = document.querySelector('.backdrop-cocktails');
+  const modalButtonAddFavorite = document.querySelector('.modal-cocktails__button');
+  const favoriteCocktails = JSON.parse(localStorage.getItem('favoriteCocktails') || '[]');
+
+  modalButtonAddFavorite.addEventListener('click', (event) => {
+    const action = event.target.dataset.action;
+
+    if (action === 'favorite') {
+      addCocktailToFavorite(selectedCocktail);
+      event.target.dataset.action = 'remove_favorite';
+      event.target.innerHTML = `Remove from favorite`;
+  } else if (action === 'remove_favorite') {
+      removeCoctailFromFavorite(selectedCocktail);
+      event.target.dataset.action = 'favorite';
+      event.target.innerHTML = `Add to favorite`;
+  }
+  });
 
   getCocktailsDetailsById(selectedCocktail).then(({ drinks }) => {
     const ingredientsMeasure = [];
@@ -18,12 +33,10 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
       }
     }
 
-
     for (let measure in drinks[0]) {
       if (measure.includes('strMeasure') && drinks[0][measure] !== null) {
         ingredientsMeasure.push(drinks[0][measure]);
       }
-    
     }
 
     for (let i = 0; i < ingredients.length; i += 1) {
@@ -55,9 +68,14 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
         </div>   
     </div>`;
 
-    modalWindow.innerHTML =  markup;
+      
+      modalWindow.innerHTML = markup;
+      backdrop.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
 
-    backdrop.classList.remove('hidden');
+      if (favoriteCocktails.includes(drinks[0].idDrink)) {
+        modalButtonAddFavorite.dataset.action = 'remove_favorite';
+        modalButtonAddFavorite.innerHTML = `Remove from favorite`;
+      }
   });
 }
-
