@@ -7,4 +7,5 @@ backdropModalCocktails.addEventListener('click', closeModal);
 
 function closeModal() {
   backdrop.classList.add('hidden');
+  document.body.style.overflow = 'auto';
 }

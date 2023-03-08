@@ -27,7 +27,9 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
       ✶ ${ingredientsMeasure[i] || ''}<span class="ingredient" name='${
         ingredients[i]
       }'>${ingredients[i]}</span>
+
       <a class="modal-cocktails__link" href="#">Ingridient</a>
+
     </li>`);
     }
     const list = listMarkup.join(' ');
@@ -48,10 +50,13 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
       <ul class="modal-cocktails__list">
   ${list}
       </ul>`;
+
   });
   // modalWindow.insertAdjacentHTML('afterbegin', markup);
   // modalWindow.classList.remove('hidden');
-  modalWindow.innerHTML = markup;
+    modalWindow.innerHTML = markup;
+    backdrop.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
 
-  backdrop.classList.remove('hidden');
 }
