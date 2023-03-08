@@ -27,7 +27,6 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
       ✶ ${ingredientsMeasure[i] || ''}<span class="ingredient" name='${
         ingredients[i]
       }'>${ingredients[i]}</span>
-      <a class="modal-cocktails__link" href="#">Ingridient</a>
     </li>`);
     }
     const list = listMarkup.join(' ');
