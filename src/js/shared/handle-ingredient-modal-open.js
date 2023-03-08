@@ -18,6 +18,7 @@ function handleIngredientModalOpen(e) {
   if (e.target.nodeName !== 'SPAN') return;
   else {
     const selectedIngredient = e.target.textContent;
+    const favoriteIng = JSON.parse(localStorage.getItem('favoriteIng') || '[]');
     const ingredientWindow = document.querySelector('[data-ingredient-window]');
     const markupContainer = document.querySelector(
       '.modal-ingredient__wrapper'
@@ -50,6 +51,14 @@ function handleIngredientModalOpen(e) {
       ingredientModalWindow.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
       addToFavoriteBtn.value = ingredient.idIngredient;
+
+      if (favoriteIng.includes(ingredient.idIngredient)) {
+        addToFavoriteBtn.textContent = 'Remove from favorites';
+        addToFavoriteBtn.dataset.action = 'remove_favorite';
+      } else {
+        addToFavoriteBtn.textContent = 'Add to favorites';
+        addToFavoriteBtn.dataset.action = 'favorite';
+      }
     });
   }
 }

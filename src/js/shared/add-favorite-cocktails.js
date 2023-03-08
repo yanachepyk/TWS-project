@@ -1,6 +1,7 @@
 import { getCocktailsDetailsById } from "./api-service";
 import { createCocktailsMarkup } from "../catalog/create-cocktails-markup";
 import { handleCocktailClickAction } from "../catalog/handle-cocktails-click-action";
+import { Paginator } from "../catalog/pagination/paginator";
 
 const noFavoriteCocktails = document.querySelector('.favorite__text');
 const favoriteCocktailsContainer = document.querySelector('.js-favorite__cocktails');
@@ -9,13 +10,25 @@ const promises = favoriteCocktails.map(id => {
     return getCocktailsDetailsById(id).then(res => res.drinks[0]);
 });
 
+const favoriteCocktailsPaginator = new Paginator({
+    selector: '.paginator',
+    drawMarkup: cocktails => {
+        favoriteCocktailsContainer.innerHTML = createCocktailsMarkup(cocktails);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+    }
+});
+
 Promise.all(promises).then(cocktails => {
     if(cocktails?.length) {
         noFavoriteCocktails.classList.add('hidden');
-        favoriteCocktailsContainer.innerHTML = createCocktailsMarkup(cocktails);
+        favoriteCocktailsPaginator.update(cocktails)
     } else {
         noFavoriteCocktails.classList.remove('hidden');
         favoriteCocktailsContainer.innerHTML = '';
+        favoriteCocktailsPaginator.hidePaginator();
     }
 });
 
