@@ -1,45 +1,35 @@
 @import '../utils/mixins';
-// .modal-cocktails {
-//     position: absolute;
-//     width: 90%;
 
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%) scale(1);
-//     transition: transform 250ms cubic-bezier(.17, .67, .83, .67);
-
-//     background-color: #FFFFFF;
-   
-//     @media screen and(min-width: $tablet) {
-
-//         width: 450px;
-//     }
-
-//     @media screen and(min-width: $desktop) {
-
-//         width: 822px;
-//     }
-// }
-
-// .modal-cocktails__title{
-// color: red;
-// };
-
-.modal-ingredient {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.ingredient-backdrop {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  background-color: #2f303a66;
+}
+
+.modal-ingredient {
+  width: 90%;
+  max-height: 95%;
+  overflow-y: auto;
+
   padding: 40px 25px 40px 15px;
-  font-family: Poppins, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--background-primary-color);
+  overflow-y: auto;
 
   @include tablet {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 715px;
     height: 557px;
+    overflow-y: auto;
     padding: 40px 28px 28px 28px;
   }
 
@@ -47,7 +37,10 @@
     padding: 40px 33px 20px 28px;
   }
 }
-
+.close-btn {
+  all: unset;
+  background-color: transparent;
+}
 .close {
   position: absolute;
   top: 19px;
@@ -56,6 +49,7 @@
   width: 17px;
   height: 17px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .modal-ingredient__list {
@@ -156,4 +150,8 @@
   @include desktop {
     margin-right: 127px;
   }
+}
+
+.ingredient {
+  cursor: pointer;
 }

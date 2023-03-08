@@ -54,6 +54,10 @@
       background-color: var(--background-hover-color);
     }
 
+    &[data-action="remove_favorite"] svg {
+      fill: var(--text-accent-color);
+    }
+
     @include tablet {
       padding: 12px 18px;
       font-size: 20px;

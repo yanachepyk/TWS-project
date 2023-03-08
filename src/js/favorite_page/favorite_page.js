@@ -3,9 +3,9 @@ import { getCocktailIngredientById } from '../shared/api-service';
 
 const refs = {
   ingEl: document.querySelector('.js-favorite__ing'),
+  
 };
 async function onLoad() {
-  console.log('test');
   const ingridients = JSON.parse(localStorage.getItem('favoriteIng') || '[]');
   const promises = getIngridients(ingridients);
   const res = await Promise.all(promises);
@@ -26,9 +26,15 @@ refs.ingEl.addEventListener('click', e => {
     return;
   const id = e.target.dataset.id;
   console.log(id);
+  const savedIngrIds = JSON.parse(localStorage.getItem('favoriteIng'));
+  
+  if (savedIngrIds) {
+    const idIndex = savedIngrIds.findIndex(savedId => savedId === id);
 
-  //TODO
+    savedIngrIds.splice(idIndex, 1);
 
-  e.target.closest('.ing__cocktails').remove();
+    localStorage.setItem('favoriteIng', JSON.stringify(savedIngrIds));
+    e.target.closest('.ing__cocktails').remove();
+  }  
 });
 const ingridients = JSON.parse(localStorage.getItem('favoriteIng') || '[]');

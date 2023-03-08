@@ -2,7 +2,8 @@ const btnIngredients = document.querySelector('.js-modal-ingredient');
 
 btnIngredients.addEventListener('click', addIngToFavorite);
 
-function addIngToFavorite(id) {
+function addIngToFavorite(evt) {
+  const id = evt.target.value;
   const favoriteIng = JSON.parse(localStorage.getItem('favoriteIng') || '[]');
   if (!favoriteIng.includes(id)) {
     favoriteIng.push(id);
@@ -37,5 +38,5 @@ export function createMarkupIng(ing) {
     </div>
   </div>`;
     })
-    .join();
+    .join('');
 }
