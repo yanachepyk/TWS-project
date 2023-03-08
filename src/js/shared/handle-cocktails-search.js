@@ -1,11 +1,20 @@
 import { getCocktailsByName, getCocktailsByFirstLetter } from './api-service';
-import { catalogPaginator } from '../catalog/catalog';
+// import { catalogPaginator } from '../catalog/catalog';
+import { Paginator } from '../catalog/pagination/paginator';
+import { createCocktailsMarkup } from '../catalog/create-cocktails-markup';
 
 const refs = {
   title: document.querySelector('.catalog__title'),
   list: document.querySelector('.catalog__list'),
   notFound: document.querySelector('.coctails__wrapper-found')
 };
+
+const catalogPaginator = new Paginator({
+  selector: '.paginator',
+  drawMarkup: (cocktails) => {
+    refs.list.innerHTML = createCocktailsMarkup(cocktails);
+  }
+});
 
 export async function handleCocktailsSearch(event) {
   event.preventDefault();
