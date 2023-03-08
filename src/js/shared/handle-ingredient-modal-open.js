@@ -44,8 +44,8 @@ function handleIngredientModalOpen(e) {
       }%</li>
       <li class="modal-ingredient__item">Flavour:</li>
     </ul>`;
-      markupContainer.insertAdjacentHTML('afterbegin', markup);
-      ingredientWindow.classList.remove('hidden');
+      markupContainer.innerHTML = markup;
+      ingredientModalWindow.classList.remove('hidden');
     });
   }
 }
