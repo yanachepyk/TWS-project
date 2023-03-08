@@ -3,9 +3,9 @@ import { getCocktailIngredientById } from '../shared/api-service';
 
 const refs = {
   ingEl: document.querySelector('.js-favorite__ing'),
+  
 };
 async function onLoad() {
-  console.log('test');
   const ingridients = JSON.parse(localStorage.getItem('favoriteIng') || '[]');
   const promises = getIngridients(ingridients);
   const res = await Promise.all(promises);
