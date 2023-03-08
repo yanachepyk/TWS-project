@@ -1,7 +1,5 @@
 import { getCocktailsDetailsById } from './api-service';
 
-
-
 export function handleLearnMoreBtnClick(selectedCocktail) {
   const modalWindow = document.querySelector('[data-modal-cocktails]');
   const backdrop = document.querySelector('.backdrop-cocktails');
@@ -18,17 +16,17 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
       }
     }
 
-
     for (let measure in drinks[0]) {
       if (measure.includes('strMeasure') && drinks[0][measure] !== null) {
         ingredientsMeasure.push(drinks[0][measure]);
       }
-    
     }
 
     for (let i = 0; i < ingredients.length; i += 1) {
       listMarkup.push(`<li class="modal-cocktails__item">
-      ✶ ${ingredientsMeasure[i] || ''}<span class="ingredient" name='${ingredients[i]}'>${ingredients[i]}</span>
+      ✶ ${ingredientsMeasure[i] || ''}<span class="ingredient" name='${
+        ingredients[i]
+      }'>${ingredients[i]}</span>
       <a class="modal-cocktails__link" href="#">Ingridient</a>
     </li>`);
     }
@@ -50,17 +48,10 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
       <ul class="modal-cocktails__list">
   ${list}
       </ul>`;
-<<<<<<< HEAD
-    });
-  }
-  modalWindow.insertAdjacentHTML('afterbegin', markup);
-  modalWindow.classList.remove('hidden');
-=======
-
-    modalWindow.innerHTML =  markup;
-
-    backdrop.classList.remove('hidden');
   });
->>>>>>> dev
-}
+  // modalWindow.insertAdjacentHTML('afterbegin', markup);
+  // modalWindow.classList.remove('hidden');
+  modalWindow.innerHTML = markup;
 
+  backdrop.classList.remove('hidden');
+}

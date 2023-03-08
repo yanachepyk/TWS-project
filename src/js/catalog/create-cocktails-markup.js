@@ -13,10 +13,11 @@ export function createCocktailsMarkup(cocktails) {
                   Learn more
               </button>
               <button class="button-secondary" type="button" data-action="favorite" data-id="${cocktail.idDrink}">
-                  Add to ${icon.outerHTML}
+                  Add to 
               </button>
           </div>
       </li>`
     )
     .join('');
 }
+// ${icon.outerHTML}
