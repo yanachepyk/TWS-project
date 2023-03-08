@@ -29,7 +29,7 @@ function getCocktailIngredientByName(name) {
 }
 
 function getCocktailIngredientById(id) {
-  return fetch(`${API_URL}/lookup.php?i=${id}`).then(response =>
+  return fetch(`${API_URL}/lookup.php?iid=${id}`).then(response =>
     response.json()
   );
 }
