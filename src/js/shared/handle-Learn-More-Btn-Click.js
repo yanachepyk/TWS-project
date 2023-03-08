@@ -1,8 +1,25 @@
 import { getCocktailsDetailsById } from './api-service';
+import { addCocktailToFavorite, removeCoctailFromFavorite } from './save-favorite-coctails';
 
 export function handleLearnMoreBtnClick(selectedCocktail) {
   const modalWindow = document.querySelector('[data-modal-cocktails]');
   const backdrop = document.querySelector('.backdrop-cocktails');
+  const modalButtonAddFavorite = document.querySelector('.modal-cocktails__button');
+  const favoriteCocktails = JSON.parse(localStorage.getItem('favoriteCocktails') || '[]');
+
+  modalButtonAddFavorite.addEventListener('click', (event) => {
+    const action = event.target.dataset.action;
+
+    if (action === 'favorite') {
+      addCocktailToFavorite(selectedCocktail);
+      event.target.dataset.action = 'remove_favorite';
+      event.target.innerHTML = `Remove from favorite`;
+  } else if (action === 'remove_favorite') {
+      removeCoctailFromFavorite(selectedCocktail);
+      event.target.dataset.action = 'favorite';
+      event.target.innerHTML = `Add to favorite`;
+  }
+  });
 
   getCocktailsDetailsById(selectedCocktail).then(({ drinks }) => {
     const ingredientsMeasure = [];
@@ -23,21 +40,19 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
     }
 
     for (let i = 0; i < ingredients.length; i += 1) {
-      listMarkup.push(`<li class="modal-cocktails__item">
-      ✶ ${ingredientsMeasure[i] || ''}<span class="ingredient" name='${
-        ingredients[i]
-      }'>${ingredients[i]}</span>
-
-      <a class="modal-cocktails__link" href="javascript:void(0);">Ingridient</a>
-
+      listMarkup.push(`<li class="modal-cocktails__item"><span class="modal-cocktails__span">✶</span>
+      ${ingredientsMeasure[i] || ''}<span class="ingredient" name='${ingredients[i]}'>${ingredients[i]}</span>
     </li>`);
     }
     const list = listMarkup.join(' ');
-    const markup = `<h1 class="modal-cocktails__title">${drinks[0].strDrink}</h1>
-      <h2 class="modal-cocktails__subtitle">INSTRACTION:</h2>
-      <p class="modal-cocktails__descrip">
-       ${drinks[0].strInstructions}
-      </p>
+    const markup = `
+      <h1 class="modal-cocktails__title">${drinks[0].strDrink}</h1>
+    <div class="test">
+        <div class="test2">
+          <h2 class="modal-cocktails__subtitle">INSTRACTION:</h2>
+           <p class="modal-cocktails__descrip">${drinks[0].strInstructions}</p>
+        </div>
+      
       <img
         class="modal-cocktails__img"
         src="${drinks[0].strDrinkThumb}"
@@ -45,14 +60,22 @@ export function handleLearnMoreBtnClick(selectedCocktail) {
         width="280px"
         height="280px"
       />
-      <h2 class="modal-cocktails__conteine">INGREDIENTS</h2>
-      <p class="modal-cocktails__per">Per cocktail</p>
-      <ul class="modal-cocktails__list">
-        ${list}
-      </ul>`;
 
+        <div class="test3">
+          <h2 class="modal-cocktails__conteine">INGREDIENTS</h2>
+          <p class="modal-cocktails__per">Per cocktail</p>
+          <ul class="modal-cocktails__list">${list}</ul>
+        </div>   
+    </div>`;
+
+      
       modalWindow.innerHTML = markup;
       backdrop.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
+
+      if (favoriteCocktails.includes(drinks[0].idDrink)) {
+        modalButtonAddFavorite.dataset.action = 'remove_favorite';
+        modalButtonAddFavorite.innerHTML = `Remove from favorite`;
+      }
   });
 }

@@ -21,7 +21,6 @@ function findIdEl(ing) {
   }
 }
 
-
 export function createMarkupIng(ing) {
   return ing
     .map(e => {
