@@ -29,7 +29,7 @@ export function createMarkupIng(ing) {
     <h3>${e.name}</h3>
     <p>${e.desc}</p>
     <button class="button-primary">Learn more</button>
-    <button class='button-secondary'>Remove</button>
+    <button class='button-secondary' data-id="${e.id}">Remove</button>
   </div>
   </div>`;
     })
