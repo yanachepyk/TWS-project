@@ -28,12 +28,12 @@ export function createMarkupIng(ing) {
       return `
   <div class="ing__cocktails">
   <div class="ing__cocktails-wrapper">
-    <h3>${e.name}</h3>
-    <p>${e.desc}</p>
+    <h3>${e.strIngredient}</h3>
+    <p>${e.strType || 'No type found'}</p>
     <button class="button-primary">Learn more</button>
-    <button class='button-secondary' data-id="${e.id}">Remove</button>
+    <button class='button-secondary' data-id="${e.idIngredient}">Remove</button>
   </div>
   </div>`;
     })
-    .join();
+    .join('');
 }
