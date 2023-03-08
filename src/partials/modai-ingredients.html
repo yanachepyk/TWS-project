@@ -1,11 +1,15 @@
-<div class="modal-ingredient hidden" data-ingredient-window>
-  <svg class="close">
-    <use href="./images/icons.svg#icon-cross"></use>
-  </svg>
-  <div class="modal-ingredient__wrapper">
-    <!-- Сюди буде вставлятися розмітка -->
+<div class="ingredient-backdrop hidden" data-ingredient-window>
+  <div class="modal-ingredient">
+    <button class="close-btn" data-btn-close>
+      <svg class="close">
+        <use href="./images/icons.svg#icon-cross"></use>
+      </svg>
+    </button>
+    <div class="modal-ingredient__wrapper">
+      <!-- Сюди буде вставлятися розмітка -->
+    </div>
+    <button class="modal-ingredient__btn button-primary" type="button">
+      Add to favorite
+    </button>
   </div>
-  <button class="modal-ingredient__btn button-primary" type="button">
-    Add to favorite
-  </button>
 </div>
