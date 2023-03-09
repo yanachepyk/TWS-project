@@ -1,4 +1,5 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .modal-cocktails {
     position: absolute;
@@ -18,15 +19,7 @@
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms cubic-bezier(.17, .67, .83, .67);
 
-    background-color: white;
-
-    
-
-
-    @media screen and (min-width: $mobile) {
-    
-        width: 320px;
-    }
+    background-color: var(--background-primary-color);
 
     @include tablet{
         padding-left: 28px;
@@ -41,16 +34,24 @@
     }
 };
 
+.modal-cocktails__icon{
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-property: fill;
+}
+
 .backdrop-cocktails.is-hidden .modal-cocktails {
-    transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .modal-cocktails__title{
     @include tablet {
-            margin-left: 320px;
+            margin-left: 282px;
         }
 }
 
+.modal-cocktails__subtitle {
+  margin-top: 20px;
 
 .modal-cocktails__subtitle{
     margin-top: 20px;
@@ -62,152 +63,144 @@
     line-height: 26px;
     text-transform: uppercase;
 
-    color: #202025;
+    color: var(--text-primary-color);
 
     @include tablet{
         margin-top: 0;
     }
 
+  color: #202025;
 
+  @include tablet {
+    margin-top: 0;
+  }
 }
 
-.modal-cocktails__descrip{
-    margin-top: 20px;
+.modal-cocktails__descrip {
+  margin-top: 20px;
+
 
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     
-    color: #5F6775;
+    color: var(--text-secondary-color);
+  }
 }
 
-.modal-cocktails__img{
-    margin-top: 32px;
+.modal-cocktails__img {
+  margin-top: 32px;
 
+  border-radius: 4px;
+  background-color: teal;
+  display: block;
 
-    border-radius: 4px;
-    background-color: teal;
-    display: block;
+  @include tablet {
+    height: 320px;
 
-    @include tablet{
-        height: 320px;
+    position: absolute;
+    display: flex;
+    top: -32px;
+    left: 0;
+    z-index: 2;
+  }
 
-        position: absolute;
-        display: flex;
-        top: -32px;
-        left: 0;
-        z-index: 2;
-    }
-
-
-    // @media screen and (min-width: $desktop) {
-        
-    // }
+  // @media screen and (min-width: $desktop) {
 }
 
-.modal-cocktails__conteine{
-    margin-top: 22px;
+.modal-cocktails__conteine {
+  margin-top: 28px;
 
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
-
+    color: var(--text-primary-color);
 
     @include tablet {
-        margin-left: 320px;
+        margin-left: 282px;
         }
-
-}
-
+      }
 .modal-cocktails__per{
     margin-top: 8px;
+    color: var(--text-primary-color);
 
     @include tablet {
-        margin-left: 320px;
+        margin-left: 282px;
     }
 }
 
-.modal-cocktails__list{
-    margin-top: 8px;
-    margin-bottom: 20px;
-    margin-left: -5px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    
-    color: #5F6775;
+.modal-cocktails__list {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  margin-left: -5px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;  
+  color: var(--text-secondary-color);
 
     @include tablet {
-        margin-left: 320px;
+        margin-left: 282px;
     }
+  }
+
+.modal-cocktails__item:not(:last-child) {
+  margin-bottom: 8px;
 }
 
-.modal-cocktails__item:not(:last-child){
-    margin-bottom: 8px;
-}
+.modal-cocktails__button-close {
+  border: none;
+  background: transparent;
 
-.modal-cocktails__button-close{
-    border: none;
-    background: transparent;
+  position: absolute;
+  display: flex;
+  top: 23px;
+  right: 23px;
 
-    position: absolute;
-    display: flex;
-    top: 23px;
-    right: 23px;
+  cursor: pointer;
 
-    cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: var(--text-accent-color);
+  }
 
-    &:hover,
-    &:focus{
-        fill: var(--text-accent-color);
-    }
-
-        @include tablet {
-            top: 19px;
-            right: 19px;
-        }
-
+  @include tablet {
+    top: 19px;
+    right: 19px;
+  }
 }
 
 .modal-cocktails__button{
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-property: background-color;
+
     @include tablet {
           margin-left: auto;
         }
 }
 
 .modal-cocktails__span{
-    color: #202025;
+    color: var(--text-primary-color);
 }
 
-
 .test{
+    
     @include tablet{
     display: flex;
     flex-direction: column-reverse;
-    // background-color: teal;
-    }
 
-    
+    }  
 }
 
 .test2{
-    @include tablet {
-    margin-top: 55px;
-    margin-bottom: 40px;
-    // background-color: tomato;
-    }
-
     
-}
-
-
-.test3{
     @include tablet {
+    margin-top: 100px;
+    margin-bottom: 40px;
    
     }
 }

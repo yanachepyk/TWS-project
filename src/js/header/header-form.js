@@ -1,4 +1,5 @@
 import { handleCocktailsSearch } from '../shared/handle-cocktails-search';
+import { hideMobileMenu } from './header-modal';
 
 const searchForm = document.querySelector('.header__search-form');
 const searchFormModal = document.querySelector('.header__search-form-modal');
