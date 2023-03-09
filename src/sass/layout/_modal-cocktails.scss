@@ -1,4 +1,5 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .modal-cocktails {
     position: absolute;
@@ -20,9 +21,9 @@
 
     background-color: var(--background-primary-color);
 
-    @include mobile{
-        width: 320px;
-    }
+    // @include mobile{
+    //     width: 320px;
+    // }
 
     @include tablet{
         padding-left: 28px;
@@ -191,6 +192,7 @@
 
 
 .test{
+    
     @include tablet{
     display: flex;
     flex-direction: column-reverse;
@@ -201,6 +203,7 @@
 }
 
 .test2{
+    
     @include tablet {
     margin-top: 100px;
     margin-bottom: 40px;
