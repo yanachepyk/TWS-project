@@ -4,6 +4,7 @@
 .header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 480px;
   padding: 20px 20px 0px 20px;
   //    margin-bottom: 60px;
@@ -15,8 +16,9 @@
   }
 
   @include desktop {
-    min-width: 1280px;
+    // min-width: 1280px;
     // margin-bottom: 97px;
+    width: 100%;
     padding: 20px 32px 0px 0px;
   }
 }
@@ -286,5 +288,5 @@
   background-color: var(--background-primary-color);
 }
 .scrolled {
-  background-color: rgba(100, 100, 100, 0.5);
+  background-color: rgba(100, 100, 100, 0.8);
 }
