@@ -20,8 +20,7 @@
 
     background-color: var(--background-primary-color);
 
-    @media screen and (min-width: $mobile) {
-    
+    @include mobile{
         width: 320px;
     }
 
@@ -38,13 +37,19 @@
     }
 };
 
+.modal-cocktails__icon{
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-property: fill;
+}
+
 .backdrop-cocktails.is-hidden .modal-cocktails {
     transform: translate(-50%, -50%) scale(0.9);
 }
 
 .modal-cocktails__title{
     @include tablet {
-            margin-left: 320px;
+            margin-left: 282px;
         }
 }
 
@@ -111,7 +116,7 @@
 
 
     @include tablet {
-        margin-left: 320px;
+        margin-left: 282px;
         }
 
 }
@@ -121,7 +126,7 @@
     color: var(--text-primary-color);
 
     @include tablet {
-        margin-left: 320px;
+        margin-left: 282px;
     }
 }
 
@@ -139,7 +144,7 @@
     color: var(--text-secondary-color);
 
     @include tablet {
-        margin-left: 320px;
+        margin-left: 282px;
     }
 }
 
@@ -171,13 +176,17 @@
 }
 
 .modal-cocktails__button{
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-property: background-color;
+
     @include tablet {
           margin-left: auto;
         }
 }
 
 .modal-cocktails__span{
-    color: #202025;
+    color: var(--text-primary-color);
 }
 
 
