@@ -6,34 +6,36 @@
   width: 480px;
   position: relative;
   padding: 20px 20px 0px 20px;
-//    margin-bottom: 60px;
 
   @include tablet {
     min-width: 768px;
-  //    margin-bottom: 77px;
     padding: 20px 32px 0px 32px;
   }
 
   @include desktop {
     min-width: 1280px;
-   // margin-bottom: 97px;
-    padding: 20px 32px 0px 0px;
+    padding: 20px 0px 0px 0px;
   }
 }
 
 .header__wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   @include desktop {
+    
   }
 }
-
+@media screen and (max-width: 1279px){
+  .header__wrapper{
+justify-content: space-between;
+  }
+}
 .header__box {
   @include desktop {
     display: flex;
     flex-direction: row;
-    gap: 170px;
+    gap: 200px;
   }
 }
 
@@ -124,13 +126,13 @@
   display: none;
 
   @include tablet {
-    min-width: 320px;
+    width: 288px;
     
     display: flex;
     border: 2px solid var(--text-accent-color);
     border-radius: 4px;
     height: 40px;
-    margin: 0 0 0 100px;
+    margin: 0 0 0 150px;
   }
   @include desktop {
     margin: 0;
@@ -181,6 +183,9 @@
   line-height: 1.71;
   letter-spacing: 0.02em;
   color: var(--text-tertiary-color);
+   @include desktop{
+     width: 234px;
+   }
 }
 // ------------------------Search-form------------//
 
