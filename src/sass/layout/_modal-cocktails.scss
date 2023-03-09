@@ -1,61 +1,73 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .modal-cocktails {
-  position: absolute;
-  width: 90%;
-  max-height: 95%;
-  overflow-y: auto;
+    position: absolute;
+    width: 90%;
+    max-height: 95%;
+    overflow-y: auto;
 
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 16px;
-  padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 16px;
+    padding-bottom: 40px;
 
-  border-radius: 2px;
+    border-radius: 2px;
 
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(.17, .67, .83, .67);
 
-  background-color: white;
+    background-color: var(--background-primary-color);
 
-  @media screen and (min-width: $mobile) {
-    width: 320px;
-  }
+    @include tablet{
+        padding-left: 28px;
+        padding-right: 28px;
+        padding-bottom: 28px;
+        width: 95%;
+    }
 
-  @include tablet {
-    padding-left: 28px;
-    padding-right: 28px;
-    padding-bottom: 28px;
-    width: 95%;
-  }
+    @include desktop{
+        padding-bottom: 28px;
+        width: 822px;
+    }
+};
 
-  @include desktop {
-    padding-bottom: 28px;
-    width: 822px;
-  }
+.modal-cocktails__icon{
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-property: fill;
 }
 
 .backdrop-cocktails.is-hidden .modal-cocktails {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
-.modal-cocktails__title {
-  @include tablet {
-    margin-left: 320px;
-  }
+.modal-cocktails__title{
+    @include tablet {
+            margin-left: 282px;
+        }
 }
 
 .modal-cocktails__subtitle {
   margin-top: 20px;
 
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 26px;
-  text-transform: uppercase;
+.modal-cocktails__subtitle{
+    margin-top: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    text-transform: uppercase;
+
+    color: var(--text-primary-color);
+
+    @include tablet{
+        margin-top: 0;
+    }
 
   color: #202025;
 
@@ -67,11 +79,13 @@
 .modal-cocktails__descrip {
   margin-top: 20px;
 
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
 
-  color: #5f6775;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    
+    color: var(--text-secondary-color);
+  }
 }
 
 .modal-cocktails__img {
@@ -92,49 +106,46 @@
   }
 
   // @media screen and (min-width: $desktop) {
-
-  // }
 }
 
 .modal-cocktails__conteine {
   margin-top: 28px;
 
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text-primary-color);
 
-  @include tablet {
-    margin-left: 320px;
-  }
-}
+    @include tablet {
+        margin-left: 282px;
+        }
 
-.modal-cocktails__per {
-  margin-top: 8px;
+.modal-cocktails__per{
+    margin-top: 8px;
+    color: var(--text-primary-color);
 
-  @include tablet {
-    margin-left: 320px;
-  }
+    @include tablet {
+        margin-left: 282px;
+    }
 }
 
 .modal-cocktails__list {
   margin-top: 8px;
   margin-bottom: 20px;
   margin-left: -5px;
-
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 26px;  
+  color: var(--text-secondary-color);
 
-  color: #5f6775;
-
-  @include tablet {
-    margin-left: 320px;
+    @include tablet {
+        margin-left: 282px;
+    }
   }
-}
 
 .modal-cocktails__item:not(:last-child) {
   margin-bottom: 8px;
@@ -162,33 +173,35 @@
   }
 }
 
-.modal-cocktails__button {
-  @include tablet {
-    margin-left: auto;
-  }
+.modal-cocktails__button{
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-property: background-color;
+
+    @include tablet {
+          margin-left: auto;
+        }
 }
 
-.modal-cocktails__span {
-  color: #202025;
+.modal-cocktails__span{
+    color: var(--text-primary-color);
 }
 
-.test {
-  @include tablet {
+.test{
+    
+    @include tablet{
     display: flex;
     flex-direction: column-reverse;
-    // background-color: teal;
-  }
+
+    }  
 }
 
-.test2 {
-  @include tablet {
-    margin-top: 55px;
+.test2{
+    
+    @include tablet {
+    margin-top: 100px;
     margin-bottom: 40px;
-    // background-color: tomato;
-  }
+   
+    }
 }
 
-.test3 {
-  @include tablet {
-  }
-}
