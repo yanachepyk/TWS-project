@@ -36,14 +36,14 @@ export function handleIngredientModalOpen(e) {
       }</span> ${ingredient.strDescription || 'description is not found'}
     </p>
     <ul class="modal-ingredient__list">
-      <li class="modal-ingredient__item">Type: ${
+      <li class="modal-ingredient__item"><span class="modal-ingrid__span">✶ </span>Type: ${
         ingredient.strIngredient || ' '
       }</li>
-      <li class="modal-ingredient__item">Country of origin:</li>
-      <li class="modal-ingredient__item">Alcohol by volume: ${
+      <li class="modal-ingredient__item"><span class="modal-ingrid__span">✶ </span>Country of origin:</li>
+      <li class="modal-ingredient__item"><span class="modal-ingrid__span">✶ </span>Alcohol by volume: ${
         ingredient.strABV || ' '
       }%</li>
-      <li class="modal-ingredient__item">Flavour:</li>
+      <li class="modal-ingredient__item"><span class="modal-ingrid__span">✶ </span>Flavour:</li>
     </ul>`;
       markupContainer.innerHTML = markup;
       backdrop?.classList.add('hidden');
