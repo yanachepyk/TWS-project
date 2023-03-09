@@ -7,7 +7,7 @@ const header = document.querySelector('.header');
 
 searchForm.addEventListener('submit', handleCocktailsSearch);
 searchFormModal.addEventListener('submit', handleCocktailsSearch);
-
+// скролл
 window.addEventListener('scroll', function () {
   if (window.scrollY > 0) {
     header.classList.add('scrolled');
