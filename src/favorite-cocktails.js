@@ -5,7 +5,6 @@ import './js/shared/add-favorite-cocktails';
 import './js/shared/listener-btn-learnmore';
 import './js/shared/add-coctails-to-ingridient';
 import './js/modal-ingredients/modal-ingredients';
-import './js/footer/footer';
 
 import { handleFavoritePageSearch } from './js/shared/handle-favorite-page-search';
 import { hideMobileMenu } from './js/header/header-modal';
