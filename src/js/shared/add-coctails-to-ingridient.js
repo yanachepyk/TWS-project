@@ -6,9 +6,9 @@ function addIngToFavorite(evt) {
   const id = evt.target.value;
   const favoriteIng = JSON.parse(localStorage.getItem('favoriteIng') || '[]');
 
-  if (evt.target.dataset.action === 'favorite') {
+  if (evt.target.dataset.action === 'favorite' && !favoriteIng.includes(id)) {
     favoriteIng.push(id);
-  } else if (evt.target.dataset.action === 'remove_favorite') {
+  } else if (evt.target.dataset.action === 'remove_favorite' && favoriteIng.includes(id)) {
     const index = favoriteIng.findIndex(_id => _id === id);
 
     favoriteIng.splice(index, 1);
