@@ -6,6 +6,11 @@ body {
   letter-spacing: 0.03em;
 }
 
+.main-content {
+  /* 100 vh minus height of the footer and header */
+  min-height: calc(100vh - 110px - 67px);
+}
+
 h1,
 h2,
 h3,

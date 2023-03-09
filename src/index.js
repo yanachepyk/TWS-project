@@ -5,3 +5,4 @@ import './js/header/theme-switch';
 import './js/hero/listenerForLetter';
 import './js/shared/listener-btn-learnmore';
 import './js/shared/add-coctails-to-ingridient';
+import './js/modal-ingredients/modal-ingredients';
